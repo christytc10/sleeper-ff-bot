@@ -21,5 +21,6 @@ class BotInterface:
         try:
             message = callback(*args)
         except Exception as err:
+            print(err)
             message = "The bot fucked up and this message can't be shown. Check the heroku logs"
         self.send_message(message)
