@@ -47,7 +47,7 @@ A Discord Bot for Sleeper fantasy leagues. It sends messages on the schedule bel
 ## Deploy the bot
 - Step 1: Go to https://signup.heroku.com/login and create a Heroku account.
 - Step 2: Click this button to deploy the Bot:
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/SwapnikKatkoori/sleeper-ff-bot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/christytc10/sleeper-ff-bot)
 - Step 3: Choose an app name
 
 - Step 4:
