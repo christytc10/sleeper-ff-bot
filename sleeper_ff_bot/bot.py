@@ -484,9 +484,11 @@ if __name__ == "__main__":
 
     starting_date = pendulum.datetime(STARTING_YEAR, STARTING_MONTH, STARTING_DAY)
 
-    webhook = os.environ["DISCORD_WEBHOOK"]
-    print(f"Webhook is {webhook}")
+    webhook = os.environ["WEBHOOK"]
+    announcements_webhook = os.environ["ANNOUNCEMENTS_WEBHOOK"]
+    print(f"Webhook is {webhook}, announcements is {announcements_webhook}")
     bot = Discord(webhook)
+    announcements = Discord(announcements_webhook)
 
     #schedule.every().thursday.at("19:00").do(bot.send, get_matchups_string, league_id)  # Matchups Thursday at 4:00 pm ET
     # schedule.every().friday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Friday at 12 pm ET
@@ -494,7 +496,7 @@ if __name__ == "__main__":
     # schedule.every().monday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Monday at 12 pm ET
     # schedule.every().tuesday.at("15:00").do(bot.send, get_standings_string, league_id)  # Standings Tuesday at 11:00 am ET
     # schedule.every().tuesday.at("15:01").do(bot.send, get_best_and_worst_string, league_id)  # Standings Tuesday at 11:01 am ET
-    schedule.every(1).days.at("16:29").do(bot.send, draft_reminder)
+    schedule.every(1).days.at("18:30").do(bot.send, draft_reminder)
 
     while True:
         if starting_date <= pendulum.today():

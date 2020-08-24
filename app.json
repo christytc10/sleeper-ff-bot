@@ -29,8 +29,12 @@
     "NUMBER_OF_PLAYOFF_TEAMS": {
       "description": "The number of playoff teams in the league."
     },
-    "DISCORD_WEBHOOK": {
-      "description": "The Discord Webhook. Required if the bot type is discord.",
+    "WEBHOOK": {
+      "description": "The Discord Webhook for spammy test stuff.",
+      "value": "1"
+    },
+    "ANNOUNCEMENTS_WEBHOOK": {
+      "description": "The Discord Webhook to stick it in the main channel.",
       "value": "1"
     }
   }
