@@ -21,6 +21,5 @@ class BotInterface:
         try:
             message = callback(*args)
         except Exception as err:
-            message = "There was an error that occurred with the bot: {}\n\n".format(err)
-            message += "Please report it at https://github.com/SwapnikKatkoori/sleeper-ff-bot/issues"
+            message = "The bot fucked up and this message can't be shown. Check the heroku logs"
         self.send_message(message)
