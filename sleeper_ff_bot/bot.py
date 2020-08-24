@@ -491,7 +491,7 @@ if __name__ == "__main__":
     announcements = Discord(announcements_webhook)
 
     bot.send(draft_reminder)
-    schedule.every(1).days.at("19:00").do(announcements.send, draft_reminder)
+    schedule.every(1).days.at("19:05").do(announcements.send, draft_reminder)
 
 
     #schedule.every().thursday.at("19:00").do(bot.send, get_matchups_string, league_id)  # Matchups Thursday at 4:00 pm ET
@@ -500,7 +500,6 @@ if __name__ == "__main__":
     # schedule.every().monday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Monday at 12 pm ET
     # schedule.every().tuesday.at("15:00").do(bot.send, get_standings_string, league_id)  # Standings Tuesday at 11:00 am ET
     # schedule.every().tuesday.at("15:01").do(bot.send, get_best_and_worst_string, league_id)  # Standings Tuesday at 11:01 am ET
-
 
     while True:
         if starting_date <= pendulum.today():

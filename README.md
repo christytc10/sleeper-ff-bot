@@ -1,19 +1,7 @@
 A Discord Bot for Sleeper fantasy leagues. It sends messages on the schedule below.
 
 ## Current Schedule
-- Thursday: 
-     - 7pm ET Matchups for the week.
-- Friday:
-     - 12pm ET Scores (Only does half ppr scores for now)
-- Sunday:
-     - 7pm ET Close games. 
-- Monday: 
-     - 12pm ET Scores (Only does half ppr scores for now)
-     - 3pm ET Miracle Monday! Displays the close games with the number of playes remaining for each roster. 
-- Tuesday: 
-     - 11am ET league standing.
-     - 11:01am ET Highest scoring team, lowest scoring team, most points left on the bench, and teams that started players that scored negative.
-
+ - Daily alert for upcoming draft
 
 ## Setup
 1. [ Discord ](#discord)
@@ -31,34 +19,8 @@ A Discord Bot for Sleeper fantasy leagues. It sends messages on the schedule bel
 
 - Step 6: Click "Save".
 
-- Step 7: Follow directions to launch the bot on a Heroku server [here](#heroku)
+- Step 7: Follow directions to launch the bot on a Heroku server
 
-<a name="heroku"></a>
-## Deploy the bot
-- Step 1: Go to https://signup.heroku.com/login and create a Heroku account.
-- Step 2: Click this button to deploy the Bot:
+Click this button to deploy the Bot:
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/christytc10/sleeper-ff-bot)
-- Step 3: Choose an app name
-
-- Step 4:
-
-For Discord fill out the following (The BOT_TYPE needs to be discord):
-
-<img src="/Media/discord/enviornment_setup.jpeg" width="400"/>
-
-You can leave everything else as their default values.
-
-- Step 5: Click "Deploy app".
-- Step 6: After the deployment process is done, click "Manage app" and go to the "Resources" tab.
-- Step 7: Click the pencil icon next to worker and toggle it to the on position, and click "confirm".
-<img src="/Media/deployment/toggle.jpeg" width="400"/>
-
-And you are all done! The bot should now be deployed an you should get a welcome message.
-
-## Author
-
-👤 **Swapnik Katkoori**
-
-## License 
-This project is licensed under the terms of the MIT license.
 
