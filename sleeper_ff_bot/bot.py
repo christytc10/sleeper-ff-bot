@@ -2,8 +2,6 @@ import schedule
 import time
 import os
 import pendulum
-from group_me import GroupMe
-from slack import Slack
 from discord import Discord
 from sleeper_wrapper import League, Stats, Players
 from constants import STARTING_MONTH, STARTING_YEAR, STARTING_DAY, START_DATE_STRING
@@ -480,13 +478,28 @@ def get_bench_beats_starters_string(league_id):
         bench = set(all_players) - set(starters)
 
 
+def test_message(league_id):
+    """
+    :param league_id: Int league_id
+    :return: name of the teams.
+    """
+    league = League(league_id=league_id)
+    users = league.get_users()
+    users_string = ""
+    for user in users:
+        if users_string != "":
+            users_string = users_string + ", "
+
+        users_string = users_string + user['display_name']
+    return f"Test bot message. League users are {users_string}"
+
+
 if __name__ == "__main__":
     """
     Main script for the bot
     """
     bot = None
 
-    bot_type = os.environ["BOT_TYPE"]
     league_id = os.environ["LEAGUE_ID"]
 
     # Check if the user specified the close game num. Default is 20.
@@ -497,27 +510,17 @@ if __name__ == "__main__":
 
     starting_date = pendulum.datetime(STARTING_YEAR, STARTING_MONTH, STARTING_DAY)
 
-    if bot_type == "groupme":
-        bot_id = os.environ["BOT_ID"]
-        bot = GroupMe(bot_id)
-    elif bot_type == "slack":
-        webhook = os.environ["SLACK_WEBHOOK"]
-        bot = Slack(webhook)
-    elif bot_type == "discord":
-        webhook = os.environ["DISCORD_WEBHOOK"]
-        bot = Discord(webhook)
+    webhook = os.environ["DISCORD_WEBHOOK"]
+    bot = Discord(webhook)
 
     bot.send(get_welcome_string)  # inital message to send
-    schedule.every().thursday.at("19:00").do(bot.send, get_matchups_string,
-                                             league_id)  # Matchups Thursday at 4:00 pm ET
-    schedule.every().friday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Friday at 12 pm ET
-    schedule.every().sunday.at("23:00").do(bot.send, get_close_games_string, league_id,
-                                           int(close_num))  # Close games Sunday on 7:00 pm ET
-    schedule.every().monday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Monday at 12 pm ET
-    schedule.every().tuesday.at("15:00").do(bot.send, get_standings_string,
-                                            league_id)  # Standings Tuesday at 11:00 am ET
-    schedule.every().tuesday.at("15:01").do(bot.send, get_best_and_worst_string,
-                                            league_id)  # Standings Tuesday at 11:01 am ET
+    # schedule.every().thursday.at("19:00").do(bot.send, get_matchups_string, league_id)  # Matchups Thursday at 4:00 pm ET
+    # schedule.every().friday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Friday at 12 pm ET
+    # schedule.every().sunday.at("23:00").do(bot.send, get_close_games_string, league_id, int(close_num))  # Close games Sunday on 7:00 pm ET
+    # schedule.every().monday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Monday at 12 pm ET
+    # schedule.every().tuesday.at("15:00").do(bot.send, get_standings_string, league_id)  # Standings Tuesday at 11:00 am ET
+    # schedule.every().tuesday.at("15:01").do(bot.send, get_best_and_worst_string, league_id)  # Standings Tuesday at 11:01 am ET
+    schedule.every(5).minutes.do(bot.send, test_message, league_id)
 
     while True:
         if starting_date <= pendulum.today():
