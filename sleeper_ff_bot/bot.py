@@ -465,7 +465,7 @@ def get_bench_beats_starters_string(league_id):
 
 
 def draft_reminder():
-    return "Draft Reminder: We are drafting Sat, Aug 29th @ 07:30 PM."
+    return "Draft Reminder: We are drafting this Saturday, Aug 29th @ 07:30 PM. Let someone know if you can't make it"
 
 
 if __name__ == "__main__":
