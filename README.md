@@ -1,13 +1,3 @@
-![Version](https://img.shields.io/badge/Version-v0.0.3-blue)
-[![Build Status](https://travis-ci.org/SwapnikKatkoori/sleeper-ff-bot.svg?branch=master)](https://travis-ci.org/SwapnikKatkoori/sleeper-ff-bot)
-![Version](https://img.shields.io/badge/license-MIT-pink)
-![GitHub issues](https://img.shields.io/github/issues/SwapnikKatkoori/sleeper-ff-bot)
-
-This project was inspired by https://github.com/dtcarls/ff_bot.
-<h1 align="center">Welcome to sleeper-ff-bot 👋</h1>
-<p>
-</p>
-
 A Discord Bot for Sleeper fantasy leagues. It sends messages on the schedule below.
 
 ## Current Schedule
