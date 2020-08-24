@@ -490,7 +490,6 @@ if __name__ == "__main__":
     bot = Discord(webhook)
     announcements = Discord(announcements_webhook)
 
-    bot.send("bot was restarted")
     bot.send(draft_reminder)
     schedule.every().day().at("18:30").do(announcements.send, draft_reminder)
 
