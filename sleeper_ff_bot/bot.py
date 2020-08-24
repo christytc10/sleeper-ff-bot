@@ -494,8 +494,7 @@ if __name__ == "__main__":
     # schedule.every().monday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Monday at 12 pm ET
     # schedule.every().tuesday.at("15:00").do(bot.send, get_standings_string, league_id)  # Standings Tuesday at 11:00 am ET
     # schedule.every().tuesday.at("15:01").do(bot.send, get_best_and_worst_string, league_id)  # Standings Tuesday at 11:01 am ET
-    schedule.every(1).days.at("17:20").do(bot.send, draft_reminder, league_id)
-    #schedule.every(1).minutes.do(bot.send, get_matchups_string, league_id)  # Matchups
+    schedule.every(1).days.at("16:25").do(bot.send, draft_reminder, league_id)
 
     while True:
         if starting_date <= pendulum.today():
