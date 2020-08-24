@@ -511,6 +511,7 @@ if __name__ == "__main__":
     starting_date = pendulum.datetime(STARTING_YEAR, STARTING_MONTH, STARTING_DAY)
 
     webhook = os.environ["DISCORD_WEBHOOK"]
+    print(f"Webhook is {webhook}")
     bot = Discord(webhook)
 
     bot.send(get_welcome_string)  # inital message to send
@@ -520,7 +521,7 @@ if __name__ == "__main__":
     # schedule.every().monday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Monday at 12 pm ET
     # schedule.every().tuesday.at("15:00").do(bot.send, get_standings_string, league_id)  # Standings Tuesday at 11:00 am ET
     # schedule.every().tuesday.at("15:01").do(bot.send, get_best_and_worst_string, league_id)  # Standings Tuesday at 11:01 am ET
-    schedule.every(5).minutes.do(bot.send, test_message, league_id)
+    schedule.every(1).minutes.do(bot.send, test_message, league_id)
 
     while True:
         if starting_date <= pendulum.today():
