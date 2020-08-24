@@ -491,7 +491,7 @@ if __name__ == "__main__":
     announcements = Discord(announcements_webhook)
 
     bot.send(draft_reminder)
-    schedule.every().day().at("18:30").do(announcements.send, draft_reminder)
+    schedule.every(1).days.at("19:00").do(announcements.send, draft_reminder)
 
 
     #schedule.every().thursday.at("19:00").do(bot.send, get_matchups_string, league_id)  # Matchups Thursday at 4:00 pm ET
