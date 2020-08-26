@@ -1,4 +1,5 @@
 from sleeper_wrapper import League, User, Players
+import json
 
 
 def get_trade_leaders(league_id=517097510076678144, current_week=16):
@@ -68,4 +69,4 @@ def get_trending_players():
             "avatar": url
         })
     print(formatted_players)
-    return formatted_players
+    return json.dumps(formatted_players)
