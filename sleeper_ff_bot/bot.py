@@ -491,7 +491,8 @@ if __name__ == "__main__":
     bot = Discord(webhook)
     announcements = Discord(announcements_webhook)
 
-    bot.send(get_injury_report)
+    doctor_bot = Discord(webhook, "Injury Report", "https://www.kindpng.com/picc/m/9-98059_red-cross-doctor-nurse-first-aid-logo-medical.png")
+    doctor_bot.send(get_injury_report)
 
     schedule.every(1).wednesday.at("18:30").do(announcements.send, draft_reminder)
     schedule.every(1).thursday.at("18:30").do(announcements.send, draft_reminder)
