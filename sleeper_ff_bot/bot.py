@@ -497,7 +497,7 @@ if __name__ == "__main__":
 
     stonks_bot = Discord(webhook, "Stonks", "https://m.media-amazon.com/images/I/81l-+mFDVzL._SS500_.jpg")
     stonks_bot.send(get_trade_leaders, league_id, get_current_week())
-    stonks_bot.send(get_trending_players)
+    stonks_bot.send(send_any_string, get_trending_players)
 
     schedule.every(1).wednesday.at("18:30").do(announcements.send, draft_reminder)
     schedule.every(1).thursday.at("18:30").do(announcements.send, draft_reminder)
