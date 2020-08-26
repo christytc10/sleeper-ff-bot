@@ -12,5 +12,5 @@ class Discord(BotInterface):
         if self.username is None:
             requests.post(self.webhook, json={"content": message})
         else:
-            requests.post(self.webhook, json={"username": self.username, "avatar_url": self.avatar_url, "content": message})
-
+            requests.post(self.webhook,
+                          json={"username": self.username, "avatar_url": self.avatar_url, "content": message})
