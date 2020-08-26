@@ -1,5 +1,4 @@
-from sleeper_wrapper import League
-from sleeper_wrapper import User
+from sleeper_wrapper import League, User, Players
 
 
 def get_trade_leaders(league_id=517097510076678144, current_week=16):
@@ -50,3 +49,26 @@ def get_trade_leaders(league_id=517097510076678144, current_week=16):
             continue
         trade_leaders_string += f'{z}: {sorted_by_user.get(z)}\n'
     return trade_leaders_string
+
+
+def get_trending_players():
+    players_api = Players()
+    players = players_api.get_all_players()
+    trends_players = players_api.get_trending_players("nfl", "add", 24, 5)
+
+    formatted_players = []
+
+    for trends_player in trends_players:
+        player = players[trends_player['player_id']]
+        url = f'https://sleepercdn.com/content/nfl/players/thumb/{trends_player["player_id"]}.jpg'
+        formatted_players.append({
+            "name": player['full_name'],
+            "position": player['position'],
+            "adds": trends_player['count'],
+            "avatar": url
+        })
+    print(formatted_players)
+    return formatted_players
+
+
+get_trending_players()

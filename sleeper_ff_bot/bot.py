@@ -6,7 +6,7 @@ from discord import Discord
 from sleeper_wrapper import League, Stats, Players
 from constants import STARTING_MONTH, STARTING_YEAR, STARTING_DAY, START_DATE_STRING
 from injury_report import get_injury_report
-from trade_leaders import get_trade_leaders
+from stonks import get_trade_leaders, get_trending_players
 
 """
 These are all of the utility functions.
@@ -495,8 +495,9 @@ if __name__ == "__main__":
     doctor_bot = Discord(webhook, "Injury Report", "https://www.kindpng.com/picc/m/9-98059_red-cross-doctor-nurse-first-aid-logo-medical.png")
     doctor_bot.send(get_injury_report)
 
-    trade_bot = Discord(webhook, "Trades", "https://m.media-amazon.com/images/I/81l-+mFDVzL._SS500_.jpg")
-    trade_bot.send(get_trade_leaders, league_id, get_current_week())
+    stonks_bot = Discord(webhook, "Stonks", "https://m.media-amazon.com/images/I/81l-+mFDVzL._SS500_.jpg")
+    stonks_bot.send(get_trade_leaders, league_id, get_current_week())
+    stonks_bot.send(get_trending_players)
 
     schedule.every(1).wednesday.at("18:30").do(announcements.send, draft_reminder)
     schedule.every(1).thursday.at("18:30").do(announcements.send, draft_reminder)
