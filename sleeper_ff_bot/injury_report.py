@@ -6,7 +6,7 @@ def get_injury_report(league_id=485057710979543040):
     for roster in League(league_id).get_rosters():
         rostered_players += roster['players']
 
-    report_string = "# Injury Report for currently rostered players: \n"
+    report_string = "**Injury Report for currently rostered players:**\n"
     players = Players().get_all_players()
     for player in players:
         if player in rostered_players:
