@@ -57,17 +57,12 @@ def get_trending_players():
     players = players_api.get_all_players()
     trends_players = players_api.get_trending_players("nfl", "add", 24, 5)
 
-    formatted_players = []
+    formatted_players = "Trending Players:\n"
 
     for trends_player in trends_players:
         player = players[trends_player['player_id']]
         url = f'https://sleepercdn.com/content/nfl/players/thumb/{trends_player["player_id"]}.jpg'
         print(url)
-        formatted_players.append({
-            "name": player['full_name'],
-            "position": player['position'],
-            "adds": trends_player['count'],
-            "avatar": url})
-    print(formatted_players)
-    # return json.dumps(formatted_players)
-    return '{"content": "Trending Players (last 24 hours)", "embeds": [{"description": "RB - Chicago Bears", "color": 7506394, "author": {"name": "1. Ryan Nall", "icon_url": "https://sleepercdn.com/content/nfl/players/thumb/5163.jpg"}, "footer": {"text": "200 adds"}}, {"description": "TE - New Orleans Saints", "author": {"name": "2. Jared Cook", "icon_url": "https://sleepercdn.com/content/nfl/players/thumb/5163.jpg"}, "footer": {"text": "150 adds"}}, {"description": "WR - Denver Broncos", "color": 15728640, "author": {"name": "2. KJ Hamler", "icon_url": "https://sleepercdn.com/content/nfl/players/thumb/5163.jpg"}, "footer": {"text": "150 adds"}}, {"description": "WR - Denver Broncos", "color": 971092, "author": {"name": "2. Jerry Jeudy", "icon_url": "https://sleepercdn.com/content/nfl/players/thumb/5163.jpg"}, "footer": {"text": "150 adds"}}]}'
+        print(player)
+        formatted_players += f"{player['full_name']} - {player['position']} - {player['team']} - Added {trends_player['count']} times\n"
+    return formatted_players
