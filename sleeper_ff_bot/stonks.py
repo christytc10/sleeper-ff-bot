@@ -66,7 +66,6 @@ def get_trending_players():
             "name": player['full_name'],
             "position": player['position'],
             "adds": trends_player['count'],
-            "avatar": url,
-        })
+            "avatar": url})
     print(formatted_players)
     return json.dumps(formatted_players)
