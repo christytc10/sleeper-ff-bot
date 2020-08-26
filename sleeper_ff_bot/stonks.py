@@ -69,6 +69,3 @@ def get_trending_players():
         })
     print(formatted_players)
     return formatted_players
-
-
-get_trending_players()
