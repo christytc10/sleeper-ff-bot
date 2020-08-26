@@ -3,10 +3,7 @@ from bot_interface import BotInterface
 
 
 class Discord(BotInterface):
-    def __init__(self, webhook):
-        self.webhook = webhook
-
-    def __init__(self, webhook, username, avatar_url):
+    def __init__(self, webhook, username=None, avatar_url=None):
         self.webhook = webhook
         self.username = username
         self.avatar_url = avatar_url
