@@ -3,6 +3,7 @@ from sleeper_wrapper import User
 
 
 def get_trade_leaders(league_id=517097510076678144, current_week=16):
+    print(f'Getting trades for league {league_id} up to week {current_week}')
     trades_by_user = {}
     final = {}
 
@@ -20,6 +21,7 @@ def get_trade_leaders(league_id=517097510076678144, current_week=16):
         })
         trades_by_user[user['username']] = 0
 
+    print(trades_by_user)
     for week in range(0, current_week):
         txns = league.get_transactions(week)
         if len(txns) == 0:
@@ -48,6 +50,3 @@ def get_trade_leaders(league_id=517097510076678144, current_week=16):
             continue
         trade_leaders_string += f'{z}: {sorted_by_user.get(z)}\n'
     return trade_leaders_string
-
-
-print(get_trade_leaders(current_week=1))

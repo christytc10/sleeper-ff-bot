@@ -496,7 +496,7 @@ if __name__ == "__main__":
     doctor_bot.send(get_injury_report)
 
     trade_bot = Discord(webhook, "Trades", "https://m.media-amazon.com/images/I/81l-+mFDVzL._SS500_.jpg")
-    trade_bot.send(get_trade_leaders)
+    trade_bot.send(get_trade_leaders, league_id, get_current_week())
 
     schedule.every(1).wednesday.at("18:30").do(announcements.send, draft_reminder)
     schedule.every(1).thursday.at("18:30").do(announcements.send, draft_reminder)
