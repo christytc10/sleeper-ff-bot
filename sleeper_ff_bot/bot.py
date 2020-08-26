@@ -5,6 +5,7 @@ import pendulum
 from discord import Discord
 from sleeper_wrapper import League, Stats, Players
 from constants import STARTING_MONTH, STARTING_YEAR, STARTING_DAY, START_DATE_STRING
+from injury_report import get_injury_report
 
 """
 These are all of the utility functions.
@@ -490,9 +491,8 @@ if __name__ == "__main__":
     bot = Discord(webhook)
     announcements = Discord(announcements_webhook)
 
-    #bot.send(draft_reminder)
+    bot.send(get_injury_report)
 
-    schedule.every(1).tuesday.at("18:30").do(announcements.send, draft_reminder)
     schedule.every(1).wednesday.at("18:30").do(announcements.send, draft_reminder)
     schedule.every(1).thursday.at("18:30").do(announcements.send, draft_reminder)
     schedule.every(1).friday.at("18:30").do(announcements.send, draft_reminder)
