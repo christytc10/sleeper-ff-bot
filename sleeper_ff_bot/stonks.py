@@ -57,12 +57,12 @@ def get_trending_players():
     players = players_api.get_all_players()
     trends_players = players_api.get_trending_players("nfl", "add", 24, 5)
 
-    formatted_players = "Trending Players:\n"
+    formatted_players = "Today's Trending Players:\n"
 
     for trends_player in trends_players:
         player = players[trends_player['player_id']]
         url = f'https://sleepercdn.com/content/nfl/players/thumb/{trends_player["player_id"]}.jpg'
         print(url)
         print(player)
-        formatted_players += f"{player['position']} - {player['team']} - {player['full_name']} - Added {trends_player['count']} times\n"
+        formatted_players += f"{player['position']}\t\t-\t{player['team']}\t-\t{player['full_name']}\t- Added {trends_player['count']} times\n"
     return formatted_players
