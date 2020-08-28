@@ -493,7 +493,7 @@ if __name__ == "__main__":
     announcements = Discord(announcements_webhook)
 
     doctor_bot = Discord(webhook, "Injury Report", "https://www.kindpng.com/picc/m/9-98059_red-cross-doctor-nurse-first-aid-logo-medical.png")
-    doctor_bot.send(get_injury_report)
+    doctor_bot.send(get_injury_report, league_id)
 
     stonks_bot = Discord(webhook, "Stonks", "https://m.media-amazon.com/images/I/81l-+mFDVzL._SS500_.jpg")
     stonks_bot.send(get_trending_players)

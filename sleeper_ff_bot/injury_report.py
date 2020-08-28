@@ -1,7 +1,7 @@
 from sleeper_wrapper import League, Players
 
 
-def get_injury_report(league_id=485057710979543040):
+def get_injury_report(league_id):
     rostered_players = []
     for roster in League(league_id).get_rosters():
         rostered_players += roster['players']
