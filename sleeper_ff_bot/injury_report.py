@@ -11,6 +11,8 @@ def get_injury_report(league_id):
     for player in players:
         if player in rostered_players:
             player_obj = players.get(player)
+            print(player_obj)
+            print(player_obj['injury_status'])
             if player_obj["injury_status"] in ['NA', 'DNR', 'Sus', None]:
                 continue
             report_string += f'{player_obj["full_name"]}: {player_obj["injury_status"]}, {player_obj["injury_body_part"]} since {player_obj["injury_start_date"]}\n'
