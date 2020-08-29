@@ -467,7 +467,7 @@ def get_bench_beats_starters_string(league_id):
 
 
 def draft_reminder():
-    return "Draft Reminder: We are drafting this Saturday, Aug 29th @ 07:30 PM. Let someone know if you can't make it"
+    return "Draft Day Motherfuckers: We are drafting tonight @ 07:30 PM. Let someone know if you can't make it"
 
 
 if __name__ == "__main__":
@@ -499,8 +499,7 @@ if __name__ == "__main__":
     stonks_bot.send(get_trending_players)
     stonks_bot.send(get_trade_leaders, league_id, get_current_week())
 
-    schedule.every(1).thursday.at("18:30").do(announcements.send, draft_reminder)
-    schedule.every(1).friday.at("18:30").do(announcements.send, draft_reminder)
+    schedule.every(1).saturday.at("08:00").do(announcements.send, draft_reminder)
 
     #schedule.every().thursday.at("19:00").do(bot.send, get_matchups_string, league_id)  # Matchups Thursday at 4:00 pm ET
     # schedule.every().friday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Friday at 12 pm ET
