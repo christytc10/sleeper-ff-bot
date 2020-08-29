@@ -62,7 +62,5 @@ def get_trending_players():
     for trends_player in trends_players:
         player = players[trends_player['player_id']]
         url = f'https://sleepercdn.com/content/nfl/players/thumb/{trends_player["player_id"]}.jpg'
-        print(url)
-        print(player)
         formatted_players += f"{player['position']} - {player['team']} - {player['full_name']} - Added {trends_player['count']} times\n"
     return formatted_players
