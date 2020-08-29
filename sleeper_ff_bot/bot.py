@@ -466,10 +466,6 @@ def get_bench_beats_starters_string(league_id):
         bench = set(all_players) - set(starters)
 
 
-def draft_reminder():
-    return "Draft Day Motherfuckers: We are drafting tonight @ 07:30 PM. Let someone know if you can't make it"
-
-
 if __name__ == "__main__":
     """
     Main script for the bot
@@ -498,8 +494,6 @@ if __name__ == "__main__":
     stonks_bot = Discord(webhook, "Stonks", "https://m.media-amazon.com/images/I/81l-+mFDVzL._SS500_.jpg")
     stonks_bot.send(get_trending_players)
     stonks_bot.send(get_trade_leaders, league_id, get_current_week())
-
-    schedule.every(1).saturday.at("08:00").do(announcements.send, draft_reminder)
 
     #schedule.every().thursday.at("19:00").do(bot.send, get_matchups_string, league_id)  # Matchups Thursday at 4:00 pm ET
     # schedule.every().friday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Friday at 12 pm ET
