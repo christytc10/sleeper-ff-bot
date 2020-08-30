@@ -503,7 +503,7 @@ if __name__ == "__main__":
     schedule.every().tuesday.at("17:00").do(stonks_bot.send,get_trending_players)
 
     # TODO - remove this, only really want to run it once
-    schedule.every().sunday.at("10:00").do(awards_bot.send,get_draft_awards, league_id)
+    schedule.every().sunday.at("10:15").do(awards_bot.send,get_draft_awards, league_id)
 
     spam_bot.send(get_trending_players)
     spam_bot.send(get_injury_report, league_id)
