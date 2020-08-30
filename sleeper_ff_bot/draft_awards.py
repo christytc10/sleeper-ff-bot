@@ -10,7 +10,7 @@ def to_cm(height_feet_inches):
     return total_inches * 2.54
 
 
-def get_draft_awards(league_id=517097510076678144):
+def get_draft_awards(league_id):
     all_rostered_players = []
     for roster in League(league_id).get_rosters():
         roster_players = []
@@ -42,7 +42,7 @@ def get_draft_awards(league_id=517097510076678144):
 
     decorated_players.sort(key=lambda x: int(x['weight']) / x['height_cm'], reverse=True)
     for player in [x for x in decorated_players if x['position'] == 'QB']:
-        awards_string += f"Big Ben Award for Dense QB: Winner is {player['full_name']} at {player['weight']} lbs and {player['height']}\n"
+        awards_string += f"Big Ben Memorial Award for Densest QB: Winner is {player['full_name']} at {player['weight']} lbs and {player['height']}\n"
         break
 
     decorated_players.sort(key=lambda x: int(x['weight']) / x['height_cm'], reverse=True)
@@ -62,28 +62,28 @@ def get_draft_awards(league_id=517097510076678144):
 
     decorated_players.sort(key=lambda x: int(x['weight']) / x['height_cm'], reverse=False)
     for player in decorated_players:
-        awards_string += f"Slenderman: Winner is {player['full_name']} at {player['weight']} lbs and {player['height']}\n"
+        awards_string += f"Slim Pickens Award: Winner is {player['full_name']} at {player['height']} and {player['weight']} lbs\n"
         break
 
     decorated_players.sort(key=lambda x: int(x['height_cm']), reverse=False)
     for player in decorated_players:
-        awards_string += f"Little Boi: Winner is {player['full_name']} at {player['weight']} lbs and {player['height']}\n"
+        awards_string += f"Little Boi: Winner is {player['full_name']} at {player['height']}\n"
         break
 
     players_on_depth_chart = [x for x in decorated_players if x['depth_chart_order'] is not None]
     players_on_depth_chart.sort(key=lambda a: a['depth_chart_order'], reverse=True)
     for player in players_on_depth_chart:
-        awards_string += f"Biggest Swing For The Fences: Winner is {player['full_name']} at number {player['depth_chart_order']} on the depth chart\n"
+        awards_string += f"Biggest Swing For The Fences: Winner is {player['full_name']} at {player['depth_chart_order']} on the depth chart\n"
         break
 
     decorated_players.sort(key=lambda x: int(x['age_days']), reverse=False)
     for player in decorated_players:
-        awards_string += f"Young Hoe: Winner is {player['full_name']} at {player['age']} years old\n"
+        awards_string += f"Younghoe Koo Award: Winner is {player['full_name']} at {player['age']} years old\n"
         break
 
     decorated_players.sort(key=lambda x: int(x['age_days']), reverse=True)
     for player in [x for x in decorated_players if x['position'] == 'WR']:
-        awards_string += f"Larry Again (Oldest WR): Winner is {player['full_name']} at {player['age']} years old\n"
+        awards_string += f"Larry Fitzgerald For Being an NFL Wide Receiver at Age 37: Winner is {player['full_name']} at {player['age']} years old\n"
         break
 
     decorated_players.sort(key=lambda x: int(x['age_days']), reverse=True)
@@ -93,7 +93,7 @@ def get_draft_awards(league_id=517097510076678144):
 
     decorated_players.sort(key=lambda x: int(x['age_days']), reverse=True)
     for player in [x for x in decorated_players if x['position'] == 'RB']:
-        awards_string += f"Toddling Back (oldest RB): Winner is {player['full_name']} at {player['age']} years old\n"
+        awards_string += f"Toddling Back: Winner is {player['full_name']} at {player['age']} years old\n"
         break
 
     decorated_players.sort(key=lambda x: int(x['age_days']), reverse=True)
@@ -101,6 +101,6 @@ def get_draft_awards(league_id=517097510076678144):
         awards_string += f"Father Time: Winner is {player['full_name']} at {player['age']} years old\n"
         break
 
-    awards_string += f"Grandfather Time: (oldest knees): Winner is David Johnson at 72 years old\n"
+    awards_string += f"Grandfather Time: Winner is David Johnson's knees at 63 years old\n"
 
     return awards_string
