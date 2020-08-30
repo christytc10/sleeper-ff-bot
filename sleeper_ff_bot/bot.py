@@ -7,6 +7,7 @@ from sleeper_wrapper import League, Stats, Players
 from constants import STARTING_MONTH, STARTING_YEAR, STARTING_DAY, START_DATE_STRING
 from injury_report import get_injury_report
 from stonks import get_trade_leaders, get_trending_players
+from draft_awards import get_draft_awards
 
 """
 These are all of the utility functions.
@@ -484,16 +485,20 @@ if __name__ == "__main__":
 
     webhook = os.environ["WEBHOOK"]
     announcements_webhook = os.environ["ANNOUNCEMENTS_WEBHOOK"]
-    print(f"Webhook is {webhook}, announcements is {announcements_webhook}")
-    bot = Discord(webhook)
+    spam_webhook = os.environ["SPAM_WEBHOOK"]
+    print(f"Webhook is {webhook}, announcements is {announcements_webhook}, spam is {spam_webhook}")
+
+    spam_bot = Discord(spam_webhook)
     announcements = Discord(announcements_webhook)
+    doctor_bot = Discord(spam_webhook, "Injury Report", "https://www.kindpng.com/picc/m/9-98059_red-cross-doctor-nurse-first-aid-logo-medical.png")
+    stonks_bot = Discord(spam_webhook, "Stonks", "https://m.media-amazon.com/images/I/81l-+mFDVzL._SS500_.jpg")
+    awards_bot = Discord(spam_webhook, "Awards", "https://image.shutterstock.com/image-vector/trophy-victory-reward-success-icon-260nw-1176405127.jpg")
 
-    doctor_bot = Discord(webhook, "Injury Report", "https://www.kindpng.com/picc/m/9-98059_red-cross-doctor-nurse-first-aid-logo-medical.png")
     doctor_bot.send(get_injury_report, league_id)
-
-    stonks_bot = Discord(webhook, "Stonks", "https://m.media-amazon.com/images/I/81l-+mFDVzL._SS500_.jpg")
     stonks_bot.send(get_trending_players)
     stonks_bot.send(get_trade_leaders, league_id, get_current_week())
+
+    awards_bot.send(get_draft_awards, league_id)
 
     #schedule.every().thursday.at("19:00").do(bot.send, get_matchups_string, league_id)  # Matchups Thursday at 4:00 pm ET
     # schedule.every().friday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Friday at 12 pm ET
