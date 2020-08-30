@@ -83,7 +83,7 @@ def get_draft_awards(league_id):
 
     decorated_players.sort(key=lambda x: int(x['age_days']), reverse=True)
     for player in [x for x in decorated_players if x['position'] == 'WR']:
-        awards_string += f"Larry Fitzgerald For Being an NFL Wide Receiver at Age 37: Winner is {player['full_name']} at {player['age']} years old\n"
+        awards_string += f"Larry Fitzgerald Award For Being an NFL Wide Receiver at Age 37: Winner is {player['full_name']}, NFL WR at {player['age']} years old\n"
         break
 
     decorated_players.sort(key=lambda x: int(x['age_days']), reverse=True)
