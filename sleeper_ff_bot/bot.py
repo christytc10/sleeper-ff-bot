@@ -495,15 +495,15 @@ if __name__ == "__main__":
     awards_bot = Discord(webhook, "Draft Awards", "https://image.shutterstock.com/image-vector/trophy-victory-reward-success-icon-260nw-1176405127.jpg")
 
     # scheduled injury reports
-    schedule.every().sunday.at("17:00").do(doctor_bot.send(get_injury_report, league_id))
-    schedule.every().wednesday.at("17:00").do(doctor_bot.send(get_injury_report, league_id))
+    schedule.every().sunday.at("17:00").do(doctor_bot.send, get_injury_report, league_id)
+    schedule.every().wednesday.at("17:00").do(doctor_bot.send,get_injury_report, league_id)
 
     # scheduled trending player report
-    schedule.every().sunday.at("11:00").do(stonks_bot.send(get_trending_players))
-    schedule.every().tuesday.at("17:00").do(stonks_bot.send(get_trending_players))
+    schedule.every().sunday.at("11:00").do(stonks_bot.send, get_trending_players)
+    schedule.every().tuesday.at("17:00").do(stonks_bot.send,get_trending_players)
 
     # TODO - remove this, only really want to run it once
-    schedule.every().sunday.at("10:00").do(awards_bot.send(get_draft_awards, league_id))
+    schedule.every().sunday.at("10:00").do(awards_bot.send,get_draft_awards, league_id)
 
     spam_bot.send(get_trending_players)
     spam_bot.send(get_injury_report, league_id)
