@@ -38,7 +38,7 @@ def get_draft_awards(league_id):
             (datetime.utcnow() - datetime.strptime(player_obj['birth_date'], "%Y-%m-%d")) / timedelta(days=1))
         decorated_players.append(player_obj)
 
-    awards_string = 'Draft Awards:\n'
+    awards_string = ''
 
     decorated_players.sort(key=lambda x: int(x['weight']) / x['height_cm'], reverse=True)
     for player in [x for x in decorated_players if x['position'] == 'QB']:
