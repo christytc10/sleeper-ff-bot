@@ -2,7 +2,7 @@ from sleeper_wrapper import League, User, Players
 import json
 
 
-def get_trade_leaders(league_id=517097510076678144, current_week=16):
+def get_trade_leaders(league_id=517097510076678144, current_week=1):
     print(f'Getting trades for league {league_id} up to week {current_week}')
     trades_by_user = {}
     final = {}
@@ -21,8 +21,7 @@ def get_trade_leaders(league_id=517097510076678144, current_week=16):
         })
         trades_by_user[user['username']] = 0
 
-    print(trades_by_user)
-    for week in range(0, current_week):
+    for week in range(0, current_week+1):
         txns = league.get_transactions(week)
         if len(txns) == 0:
             continue
@@ -64,3 +63,4 @@ def get_trending_players():
         url = f'https://sleepercdn.com/content/nfl/players/thumb/{trends_player["player_id"]}.jpg'
         formatted_players += f"{player['position']} - {player['team']} - {player['full_name']} - Added {trends_player['count']} times\n"
     return formatted_players
+
