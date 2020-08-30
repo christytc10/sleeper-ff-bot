@@ -1,5 +1,6 @@
 from sleeper_wrapper import League, Players
 from espn_stats import player_stats_for_week
+from datetime import timedelta, datetime
 
 
 def to_cm(height_feet_inches):
@@ -32,20 +33,54 @@ def get_big_boi(league_id=522501269823889408, season=2020, week=1):
         player_with_roster = next((x for x in all_rostered_players if x['sleeper_id'] == player_obj['player_id']), None)
         player_obj['roster_id'] = player_with_roster['roster_id']
         player_obj['height_cm'] = to_cm(player_obj['height'])
+        player_obj['age_days'] = int(
+            (datetime.utcnow() - datetime.strptime(player_obj['birth_date'], "%Y-%m-%d")) / timedelta(days=1))
         decorated_players.append(player_obj)
 
-    espn_ids = [x['espn_id'] for x in decorated_players if (x['position'] in ['WR'])]
+    espn_ids = [x['espn_id'] for x in decorated_players if (x['position'] in ['TE', 'WR', 'RB'])]
     stats = player_stats_for_week(season, week, espn_ids)
     td_scorers = [x['espn_id'] for x in stats if x['rec_tds'] > 0 or x['rush_tds'] > 0]
+
+    print(f'Week {week} awards')
 
     decorated_players.sort(key=lambda x: int(x['weight']) / x['height_cm'], reverse=True)
     player_with_td = (x for x in decorated_players if x['espn_id'] in td_scorers)
     for player in player_with_td:
-        print(f"Week {week} Big Boi is {player['full_name']} at {player['weight']} lbs and {player['height_cm']}")
+        print(f"Big Boi award winner is {player['full_name']} at {player['weight']} lbs and {player['height']}")
         break
 
-    decorated_players.sort(key=lambda x: int(x['weight']) / x['height_cm'], reverse=False)
+    decorated_players.sort(key=lambda x: x['height_cm'], reverse=False)
     player_with_td = (x for x in decorated_players if x['espn_id'] in td_scorers)
     for player in player_with_td:
-        print(f"Week {week} Little Boi is {player['full_name']} at {player['weight']} lbs and {player['height']}")
+        print(f"Smol Boi award winner is {player['full_name']} at {player['height']}")
         break
+
+    decorated_players.sort(key=lambda x: int(x['age_days']), reverse=True)
+    player_with_td = (x for x in decorated_players if x['espn_id'] in td_scorers)
+    for player in player_with_td:
+        print(f"Jambo Award For Being an Old Bastard winner is {player['full_name']} at {player['age']} years old")
+        break
+
+    decorated_players.sort(key=lambda x: int(x['age_days']), reverse=False)
+    player_with_td = (x for x in decorated_players if x['espn_id'] in td_scorers)
+    for player in player_with_td:
+        print(f"Drake Award For Promising Youth winner is {player['full_name']} at {player['age']} years old")
+        break
+
+    player_with_td = [x for x in decorated_players if x['espn_id'] in td_scorers and x['depth_chart_order'] is not None]
+    player_with_td.sort(key=lambda a: a['depth_chart_order'], reverse=True)
+    for player in player_with_td:
+        print(
+            f"Who the Fuck is Tingis Pingis Award for Coming Out of Nowhere winner is {player['full_name']} at number {player['depth_chart_order']} on the depth chart")
+        break
+
+    added_players = []
+    fake_league = League(522501269823889408)
+    txns = fake_league.get_transactions(week=1)
+    for txn in [x['adds'] for x in txns if x['type'] in ['free_agent', 'waiver'] and x['adds'] is not None]:
+        for key in txn.keys():
+            added_players.append(key)
+    print(added_players)
+
+
+get_big_boi(season=2019, week=10)
