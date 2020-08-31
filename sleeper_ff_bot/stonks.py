@@ -21,7 +21,7 @@ def get_trade_leaders(league_id=517097510076678144, current_week=1):
         })
         trades_by_user[user['username']] = 0
 
-    for week in range(0, current_week+1):
+    for week in range(0, current_week + 1):
         txns = league.get_transactions(week)
         if len(txns) == 0:
             continue
@@ -60,7 +60,6 @@ def get_trending_players():
 
     for trends_player in trends_players:
         player = players[trends_player['player_id']]
-        url = f'https://sleepercdn.com/content/nfl/players/thumb/{trends_player["player_id"]}.jpg'
-        formatted_players += f"{player['position']} - {player['team']} - {player['full_name']} - Added {trends_player['count']} times\n"
+        name = player['full_name'] if 'full_name' in player else f"{player['first_name']} {player['last_name']}"
+        formatted_players += f"{player['position']} - {player['team']} - {name} - Added {trends_player['count']} times\n"
     return formatted_players
-
