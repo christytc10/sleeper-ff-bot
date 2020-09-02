@@ -495,9 +495,10 @@ if __name__ == "__main__":
     awards_bot = Discord(webhook, "Draft Awards",
                          "https://image.shutterstock.com/image-vector/trophy-victory-reward-success-icon-260nw-1176405127.jpg")
 
+    # TODO - reenable after 06-09-20
     # scheduled injury reports
-    schedule.every().sunday.at("17:00").do(doctor_bot.send, get_injury_report, league_id)
-    schedule.every().wednesday.at("17:00").do(doctor_bot.send, get_injury_report, league_id)
+    #schedule.every().sunday.at("17:00").do(doctor_bot.send, get_injury_report, league_id)
+    #schedule.every().wednesday.at("17:00").do(doctor_bot.send, get_injury_report, league_id)
 
     # scheduled trending player report
     schedule.every().sunday.at("11:00").do(stonks_bot.send, get_trending_players)
