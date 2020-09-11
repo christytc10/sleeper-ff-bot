@@ -505,6 +505,7 @@ if __name__ == "__main__":
     schedule.every().tuesday.at("17:00").do(stonks_bot.send, get_trending_players)
 
     spam_bot.send(get_trending_players)
+    spam_bot.send(send_any_string, "REMINDER: NFL games today, set your lineups")
     spam_bot.send(get_injury_report, league_id)
     spam_bot.send(get_trade_leaders, league_id, get_current_week())
 
