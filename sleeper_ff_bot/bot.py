@@ -495,21 +495,24 @@ if __name__ == "__main__":
     awards_bot = Discord(webhook, "Draft Awards",
                          "https://image.shutterstock.com/image-vector/trophy-victory-reward-success-icon-260nw-1176405127.jpg")
 
-    # TODO - reenable after 06-09-20
     # scheduled injury reports
-    #schedule.every().sunday.at("17:00").do(doctor_bot.send, get_injury_report, league_id)
-    #schedule.every().wednesday.at("17:00").do(doctor_bot.send, get_injury_report, league_id)
+    schedule.every().sunday.at("13:00").do(doctor_bot.send, get_injury_report, league_id)
+    schedule.every().thursday.at("19:00").do(doctor_bot.send, get_injury_report, league_id)
+
+    # scheduled lineup reminders
+    schedule.every().sunday.at("12:00").do(announcements.send, send_any_string, "REMINDER: NFL main slate today, set your lineups")
+    schedule.every().thursday.at("18:00").do(announcements.send, send_any_string, "REMINDER: NFL games start today, set your lineups")
 
     # scheduled trending player report
     schedule.every().sunday.at("11:00").do(stonks_bot.send, get_trending_players)
     schedule.every().tuesday.at("17:00").do(stonks_bot.send, get_trending_players)
 
-    schedule.every().sunday.at("11:00").do(announcements.send, send_any_string, "REMINDER: NFL main slate today, set your lineups")
-    schedule.every().thursday.at("18:00").do(announcements.send, send_any_string, "REMINDER: NFL games start today, set your lineups")
-
     spam_bot.send(get_trending_players)
     spam_bot.send(get_injury_report, league_id)
     spam_bot.send(get_trade_leaders, league_id, get_current_week())
+
+    spam_bot.send(get_matchups_string, league_id)
+    spam_bot.send(get_scores_string, league_id)
 
     # schedule.every().thursday.at("19:00").do(bot.send, get_matchups_string, league_id)  # Matchups Thursday at 4:00 pm ET
     # schedule.every().friday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Friday at 12 pm ET
