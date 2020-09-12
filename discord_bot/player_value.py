@@ -5,7 +5,7 @@ prices = {}
 
 
 def load_prices():
-    with open("pricing/sf.csv") as f:
+    with open("discord_bot/pricing/sf.csv") as f:
         records = csv.DictReader(f)
         for row in records:
             prices[row['name']] = row['value']
