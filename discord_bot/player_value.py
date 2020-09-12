@@ -35,7 +35,6 @@ def similar_value(player_name):
         return "No idea"
     ratio = fuzz.ratio(matches[0].lower(), player_name.lower())
     if ratio > 80:
-        print(f'{matches[0]} : {prices.get(matches[0])}')
         min_price = 0.95 * prices.get(matches[0])
         max_price = 1.05 * prices.get(matches[0])
         similars = [x for x in prices if min_price < prices.get(x) < max_price]
