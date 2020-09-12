@@ -21,6 +21,9 @@ async def on_message(message):
         name = message.content[len('!value'):].strip()
         await message.channel.send(find_value(name))
 
+    if message.content.startswith('!similar'):
+        name = message.content[len('!similar'):].strip()
+        await message.channel.send(similar_value(name))
 
 @client.event
 async def on_ready():
