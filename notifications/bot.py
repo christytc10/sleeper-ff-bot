@@ -7,7 +7,6 @@ from sleeper_wrapper import League, Stats, Players
 from notifications.constants import STARTING_MONTH, STARTING_YEAR, STARTING_DAY, START_DATE_STRING
 from notifications.injury_report import get_injury_report
 from notifications.stonks import get_trade_leaders, get_trending_players
-from discord_bot.chat_bot import start_chat_bot
 
 """
 These are all of the utility functions.
@@ -467,10 +466,11 @@ def get_bench_beats_starters_string(league_id):
         bench = set(all_players) - set(starters)
 
 
-if __name__ == "__main__":
+def run_notifications():
     """
     Main script for the bot
     """
+    print('########## RUNNING NOTIFICATIONS ################')
     bot = None
 
     league_id = os.environ["LEAGUE_ID"]
@@ -526,4 +526,4 @@ if __name__ == "__main__":
     while True:
         if starting_date <= pendulum.today():
             schedule.run_pending()
-        time.sleep(5)
+        time.sleep(15)

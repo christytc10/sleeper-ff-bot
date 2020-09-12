@@ -30,4 +30,5 @@ async def on_ready():
     print('------')
 
 
-client.run(TOKEN)
+def start_bot():
+    client.run(TOKEN)
