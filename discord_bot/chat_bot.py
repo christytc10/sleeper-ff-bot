@@ -3,8 +3,7 @@ import discord
 from player_value import find_value
 import os
 
-TOKEN = 'NzU0MDczNDA2MjEwNzAzNDUy.X1vblg.rihuN-0CqYFBN2F23a0ZZ3tak8E'
-#TOKEN = os.environ["CHAT_BOT_TOKEN"]
+TOKEN = os.environ["CHAT_BOT_TOKEN"]
 client = discord.Client()
 
 @client.event
