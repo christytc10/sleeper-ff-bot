@@ -1,1 +1,1 @@
-worker: python3 notifications/bot.py
+chatbot: python3 discord_boy/chat_bot.py

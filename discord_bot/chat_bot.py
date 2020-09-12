@@ -1,9 +1,10 @@
 # Work with Python 3.6
 import discord
-from discord_bot.player_value import find_value
+from player_value import find_value
 import os
 
-TOKEN = os.environ["CHAT_BOT_TOKEN"]
+TOKEN = 'NzU0MDczNDA2MjEwNzAzNDUy.X1vblg.rihuN-0CqYFBN2F23a0ZZ3tak8E'
+#TOKEN = os.environ["CHAT_BOT_TOKEN"]
 client = discord.Client()
 
 @client.event
@@ -30,3 +31,6 @@ async def on_ready():
 
 def start_chat_bot():
     client.run(TOKEN)
+
+
+client.run(TOKEN)

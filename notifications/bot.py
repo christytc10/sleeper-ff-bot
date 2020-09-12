@@ -523,8 +523,7 @@ if __name__ == "__main__":
     # schedule.every().tuesday.at("15:00").do(bot.send, get_standings_string, league_id)  # Standings Tuesday at 11:00 am ET
     # schedule.every().tuesday.at("15:01").do(bot.send, get_best_and_worst_string, league_id)  # Standings Tuesday at 11:01 am ET
 
-    start_chat_bot()
-
     while True:
         if starting_date <= pendulum.today():
             schedule.run_pending()
+        time.sleep(5)
