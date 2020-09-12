@@ -1,10 +1,10 @@
 # Work with Python 3.6
-from discord import Client as DiscordClient
+import discord
 from discord_bot.player_value import find_value
 import os
 
 TOKEN = os.environ["CHAT_BOT_TOKEN"]
-client = DiscordClient()
+client = discord.Client()
 
 @client.event
 async def on_message(message):

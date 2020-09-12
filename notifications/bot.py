@@ -2,7 +2,7 @@ import schedule
 import time
 import os
 import pendulum
-from notifications.discord import Discord
+from notifications.discord_sender import Discord
 from sleeper_wrapper import League, Stats, Players
 from notifications.constants import STARTING_MONTH, STARTING_YEAR, STARTING_DAY, START_DATE_STRING
 from notifications.injury_report import get_injury_report
