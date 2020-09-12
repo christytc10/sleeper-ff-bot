@@ -1,6 +1,6 @@
 # Work with Python 3.6
 import discord
-from discord_bot.player_value import find_value
+from discord_bot.player_value import find_value, similar_value
 import os
 
 TOKEN = os.environ["CHAT_BOT_TOKEN"]
