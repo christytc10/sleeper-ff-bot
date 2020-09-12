@@ -30,8 +30,4 @@ async def on_ready():
     print('------')
 
 
-def start_chat_bot():
-    client.run(TOKEN)
-
-
 client.run(TOKEN)
