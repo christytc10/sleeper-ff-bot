@@ -1,5 +1,5 @@
 from sleeper_wrapper import League, Players
-from espn_stats import player_stats_for_week
+from notifications.espn_stats import player_stats_for_week
 from datetime import timedelta, datetime
 
 

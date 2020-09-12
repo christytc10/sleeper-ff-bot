@@ -1,5 +1,5 @@
 import requests
-from bot_interface import BotInterface
+from notifications.bot_interface import BotInterface
 
 
 class Discord(BotInterface):

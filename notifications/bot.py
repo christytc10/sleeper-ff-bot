@@ -2,11 +2,11 @@ import schedule
 import time
 import os
 import pendulum
-from discord import Discord
+from notifications.discord import Discord
 from sleeper_wrapper import League, Stats, Players
-from constants import STARTING_MONTH, STARTING_YEAR, STARTING_DAY, START_DATE_STRING
-from injury_report import get_injury_report
-from stonks import get_trade_leaders, get_trending_players
+from notifications.constants import STARTING_MONTH, STARTING_YEAR, STARTING_DAY, START_DATE_STRING
+from notifications.injury_report import get_injury_report
+from notifications.stonks import get_trade_leaders, get_trending_players
 from discord_bot.chat_bot import start_chat_bot
 
 """
