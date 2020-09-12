@@ -7,6 +7,7 @@ from sleeper_wrapper import League, Stats, Players
 from constants import STARTING_MONTH, STARTING_YEAR, STARTING_DAY, START_DATE_STRING
 from injury_report import get_injury_report
 from stonks import get_trade_leaders, get_trending_players
+from discord_bot.chat_bot import start_chat_bot
 
 """
 These are all of the utility functions.
@@ -489,6 +490,7 @@ if __name__ == "__main__":
 
     spam_bot = Discord(spam_webhook)
     announcements = Discord(announcements_webhook)
+    bot = Discord(webhook)
     doctor_bot = Discord(webhook, "Injury Report",
                          "https://www.kindpng.com/picc/m/9-98059_red-cross-doctor-nurse-first-aid-logo-medical.png")
     stonks_bot = Discord(webhook, "Stonks", "https://m.media-amazon.com/images/I/81l-+mFDVzL._SS500_.jpg")
@@ -516,10 +518,12 @@ if __name__ == "__main__":
 
     # schedule.every().thursday.at("19:00").do(bot.send, get_matchups_string, league_id)  # Matchups Thursday at 4:00 pm ET
     # schedule.every().friday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Friday at 12 pm ET
-    # schedule.every().sunday.at("23:00").do(bot.send, get_close_games_string, league_id, int(close_num))  # Close games Sunday on 7:00 pm ET
+    # schedule.every().sunday.at("22:00").do(bot.send, get_close_games_string, league_id, int(close_num))  # Close games Sunday on 7:00 pm ET
     # schedule.every().monday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Monday at 12 pm ET
     # schedule.every().tuesday.at("15:00").do(bot.send, get_standings_string, league_id)  # Standings Tuesday at 11:00 am ET
     # schedule.every().tuesday.at("15:01").do(bot.send, get_best_and_worst_string, league_id)  # Standings Tuesday at 11:01 am ET
+
+    start_chat_bot()
 
     while True:
         if starting_date <= pendulum.today():

@@ -36,6 +36,10 @@
     "ANNOUNCEMENTS_WEBHOOK": {
       "description": "The Discord Webhook to stick it in the main channel.",
       "value": "1"
+    },
+    "CHAT_BOT_TOKEN": {
+      "description": "The Discord token for the bot.",
+      "value": "1"
     }
   }
 }

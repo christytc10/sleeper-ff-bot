@@ -83,4 +83,22 @@ def get_big_boi(league_id=522501269823889408, season=2020, week=1):
     print(added_players)
 
 
-get_big_boi(season=2019, week=10)
+def get_waiver_pickup_award(league_id=517097510076678144, season=2019, week=16):
+    league_api = League(league_id)
+    waiver_claims = [x for x in league_api.get_transactions(1) if x['type'] == 'waiver']
+    players = Players().get_all_players()
+    claimed_players= []
+    for waiver_claim in waiver_claims:
+        claimed_player = players.get(list(waiver_claim['adds'].keys())[0])
+        print(f"{claimed_player['first_name']} {claimed_player['last_name']}")
+        claimed_players.append(claimed_player)
+        #TODO - add who claimed them
+
+    espn_ids = [x['espn_id'] for x in claimed_players]
+    print(espn_ids)
+    stats = player_stats_for_week(season, week, espn_ids)
+    print(stats)
+    return 'DONE'
+
+
+print(get_waiver_pickup_award())

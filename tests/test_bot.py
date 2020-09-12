@@ -1,4 +1,4 @@
-from sleeper_ff_bot import bot
+from notifications import bot
 import pytest
 
 def test_get_matchups_string():
