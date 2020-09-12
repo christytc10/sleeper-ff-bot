@@ -1,1 +1,1 @@
-worker: python3 sleeper_ff_bot/bot.py
+worker: python3 sleeper_ff_bot/notifications/bot.py
