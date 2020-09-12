@@ -1,1 +1,1 @@
-chatbot: python3 discord_boy/chat_bot.py
+chatbot: python3 discord_bot/chat_bot.py
