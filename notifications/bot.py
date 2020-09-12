@@ -528,4 +528,3 @@ if __name__ == "__main__":
     while True:
         if starting_date <= pendulum.today():
             schedule.run_pending()
-        time.sleep(15)
