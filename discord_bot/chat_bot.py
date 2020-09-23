@@ -1,6 +1,7 @@
 # Work with Python 3.6
 import discord
 from discord_bot.player_value import find_value, similar_value
+from discord_bot.combine import get_combine_results
 import os
 
 TOKEN = os.environ["CHAT_BOT_TOKEN"]
@@ -24,6 +25,11 @@ async def on_message(message):
     if message.content.startswith('!similar'):
         name = message.content[len('!similar'):].strip()
         await message.channel.send(similar_value(name))
+
+    if message.content.startswith('!combine'):
+        name = message.content[len('!combine'):].strip()
+        await message.channel.send(get_combine_results(name))
+
 
 @client.event
 async def on_ready():
