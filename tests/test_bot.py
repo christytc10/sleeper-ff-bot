@@ -47,6 +47,7 @@ def test_get_highest_score():
 def test_get_best_and_worst():
     best_and_worst = bot.get_best_and_worst_string(442724598706860032)
     print(best_and_worst)
+
 def test_get_current_week():
     """
     Tests the get_current_week method

@@ -28,58 +28,6 @@ def get_league_scoreboards(league_id, week):
     return scoreboards
 
 
-def get_highest_score(league_id):
-    """
-    Gets the highest score of the week
-    :param league_id: Int league_id
-    :return: List [score, team_name]
-    """
-    week = get_current_week()
-    scoreboards = get_league_scoreboards(league_id, week)
-    max_score = [0, None]
-
-    for matchup_id in scoreboards:
-        matchup = scoreboards[matchup_id]
-        # check both teams in the matchup to see if they have the highest score in the league
-        if float(matchup[0][1]) > max_score[0]:
-            score = matchup[0][1]
-            team_name = matchup[0][0]
-            max_score[0] = score
-            max_score[1] = team_name
-        if float(matchup[1][1]) > max_score[0]:
-            score = matchup[1][1]
-            team_name = matchup[1][0]
-            max_score[0] = score
-            max_score[1] = team_name
-    return max_score
-
-
-def get_lowest_score(league_id):
-    """
-    Gets the lowest score of the week
-    :param league_id: Int league_id
-    :return: List[score, team_name]
-    """
-    week = get_current_week()
-    scoreboards = get_league_scoreboards(league_id, week)
-    min_score = [999, None]
-
-    for matchup_id in scoreboards:
-        matchup = scoreboards[matchup_id]
-        # check both teams in the matchup to see if they have the lowest score in the league
-        if float(matchup[0][1]) < min_score[0]:
-            score = matchup[0][1]
-            team_name = matchup[0][0]
-            min_score[0] = score
-            min_score[1] = team_name
-        if float(matchup[1][1]) < min_score[0]:
-            score = matchup[1][1]
-            team_name = matchup[1][0]
-            min_score[0] = score
-            min_score[1] = team_name
-    return min_score
-
-
 def make_roster_dict(starters_list, bench_list):
     """
     Takes in a teams starter list and bench list and makes a dictionary with positions.
@@ -127,19 +75,6 @@ def make_roster_dict(starters_list, bench_list):
     return roster_dict
 
 
-def get_highest_bench_points(bench_points):
-    """
-    Returns a tuple of the team with the highest scoring bench
-    :param bench_points: List [(team_name, std_points)]
-    :return: Tuple (team_name, std_points) of the team with most std_points
-    """
-    max_tup = ("team_name", 0)
-    for tup in bench_points:
-        if tup[1] > max_tup[1]:
-            max_tup = tup
-    return max_tup
-
-
 def map_users_to_team_name(users):
     """
     Maps user_id to team_name
@@ -170,94 +105,6 @@ def map_roster_id_to_owner_id(league_id):
         owner_id = roster["owner_id"]
         result_dict[roster_id] = owner_id
 
-    return result_dict
-
-
-def get_bench_points(league_id):
-    """
-
-    :param league_id: Int league_id
-    :return: List [(team_name, score), ...]
-    """
-    week = get_current_week()
-
-    league = League(league_id)
-    users = league.get_users()
-    matchups = league.get_matchups(week)
-
-    stats = Stats()
-    # WEEK STATS NEED TO BE FIXED
-    week_stats = stats.get_week_stats("regular", STARTING_YEAR, week)
-
-    owner_id_to_team_dict = map_users_to_team_name(users)
-    roster_id_to_owner_id_dict = map_roster_id_to_owner_id(league_id)
-    result_list = []
-
-    for matchup in matchups:
-        starters = matchup["starters"]
-        all_players = matchup["players"]
-        bench = set(all_players) - set(starters)
-
-        std_points = 0
-        for player in bench:
-            try:
-                std_points += week_stats[str(player)]["pts_std"]
-            except:
-                continue
-        owner_id = roster_id_to_owner_id_dict[matchup["roster_id"]]
-        if owner_id is None:
-            team_name = "Team name not available"
-        else:
-            team_name = owner_id_to_team_dict[owner_id]
-        result_list.append((team_name, std_points))
-
-    return result_list
-
-
-def get_negative_starters(league_id):
-    """
-    Finds all of the players that scores negative points in standard and
-    :param league_id: Int league_id
-    :return: Dict {"owner_name":[("player_name", std_score), ...], "owner_name":...}
-    """
-    week = get_current_week()
-
-    league = League(league_id)
-    users = league.get_users()
-    matchups = league.get_matchups(week)
-
-    stats = Stats()
-    # WEEK STATS NEED TO BE FIXED
-    week_stats = stats.get_week_stats("regular", STARTING_YEAR, week)
-
-    players = Players()
-    players_dict = players.get_all_players()
-    owner_id_to_team_dict = map_users_to_team_name(users)
-    roster_id_to_owner_id_dict = map_roster_id_to_owner_id(league_id)
-
-    result_dict = {}
-
-    for i, matchup in enumerate(matchups):
-        starters = matchup["starters"]
-        negative_players = []
-        for starter_id in starters:
-            try:
-                std_pts = week_stats[str(starter_id)]["pts_std"]
-            except KeyError:
-                std_pts = 0
-            if std_pts < 0:
-                player_info = players_dict[starter_id]
-                player_name = "{} {}".format(player_info["first_name"], player_info["last_name"])
-                negative_players.append((player_name, std_pts))
-
-        if len(negative_players) > 0:
-            owner_id = roster_id_to_owner_id_dict[matchup["roster_id"]]
-
-            if owner_id is None:
-                team_name = "Team name not available" + str(i)
-            else:
-                team_name = owner_id_to_team_dict[owner_id]
-            result_dict[team_name] = negative_players
     return result_dict
 
 
@@ -317,17 +164,6 @@ def get_matchups_string(league_id):
     return final_message_string
 
 
-def get_playoff_bracket_string(league_id):
-    """
-    Creates and returns a message of the league's playoff bracket.
-    :param league_id: Int league_id
-    :return: string message league's playoff bracket
-    """
-    league = League(league_id)
-    bracket = league.get_playoff_winners_bracket()
-    return bracket
-
-
 def get_scores_string(league_id):
     """
     Creates and returns a message of the league's current scores for the current week.
@@ -350,31 +186,6 @@ def get_scores_string(league_id):
                                                                                 matchup[1][0], second_score)
         final_message_string += string_to_add
 
-    return final_message_string
-
-
-def get_close_games_string(league_id, close_num):
-    """
-    Creates and returns a message of the league's close games.
-    :param league_id: Int league_id
-    :param close_num: Int what poInt difference is considered a close game.
-    :return: string message of the current week's close games.
-    """
-    league = League(league_id)
-    week = get_current_week()
-    scoreboards = get_league_scoreboards(league_id, week)
-    close_games = league.get_close_games(scoreboards, close_num)
-
-    final_message_string = "___________________\n"
-    final_message_string += "Close games😰😰\n"
-    final_message_string += "___________________\n\n"
-
-    for i, matchup_id in enumerate(close_games):
-        matchup = close_games[matchup_id]
-        print(matchup)
-        string_to_add = "Matchup {}\n{:<8} {:<8.2f}\n{:<8} {:<8.2f}\n\n".format(i + 1, matchup[0][0], matchup[0][1],
-                                                                                matchup[1][0], matchup[1][1])
-        final_message_string += string_to_add
     return final_message_string
 
 
@@ -408,62 +219,6 @@ def get_standings_string(league_id):
             string_to_add += "________________________________\n\n"
         final_message_string += string_to_add
     return final_message_string
-
-
-def get_best_and_worst_string(league_id):
-    """
-    :param league_id: Int league_id
-    :return: String of the highest Scorer, lowest scorer, most points left on the bench, and Why bother section.
-    """
-    highest_scorer = get_highest_score(league_id)[1]
-    highest_score = get_highest_score(league_id)[0]
-    highest_score_emojis = "🏆🏆"
-    lowest_scorer = get_lowest_score(league_id)[1]
-    lowest_score = get_lowest_score(league_id)[0]
-    lowest_score_emojis = "😢😢"
-    final_string = "{} Highest Scorer:\n{}\n{:.2f}\n\n{} Lowest Scorer:\n {}\n{:.2f}\n\n".format(highest_score_emojis,
-                                                                                                 highest_scorer,
-                                                                                                 highest_score,
-                                                                                                 lowest_score_emojis,
-                                                                                                 lowest_scorer,
-                                                                                                 lowest_score)
-    highest_bench_score_emojis = " 😂😂"
-    bench_points = get_bench_points(league_id)
-    largest_scoring_bench = get_highest_bench_points(bench_points)
-    final_string += "{} Most points left on the bench:\n{}\n{:.2f} in standard\n\n".format(highest_bench_score_emojis,
-                                                                                           largest_scoring_bench[0],
-                                                                                           largest_scoring_bench[1])
-    negative_starters = get_negative_starters(league_id)
-    if negative_starters:
-        final_string += "🤔🤔Why bother?\n"
-
-    for key in negative_starters:
-        negative_starters_list = negative_starters[key]
-        final_string += "{} Started:\n".format(key)
-        for negative_starter_tup in negative_starters_list:
-            final_string += "{} who had {} in standard\n".format(negative_starter_tup[0], negative_starter_tup[1])
-        final_string += "\n"
-    return final_string
-
-
-def get_bench_beats_starters_string(league_id):
-    """
-    Gets all bench players that outscored starters at their position.
-    :param league_id: Int league_id
-    :return: String teams which had bench players outscore their starters in a position.
-    """
-    week = get_current_week()
-    league = League(league_id)
-    matchups = league.get_matchups(week)
-
-    final_message_string = "________________________________\n"
-    final_message_string += "Worst of the week💩💩\n"
-    final_message_string += "________________________________\n\n"
-
-    for matchup in matchups:
-        starters = matchup["starters"]
-        all_players = matchup["players"]
-        bench = set(all_players) - set(starters)
 
 
 def run_notifications():
