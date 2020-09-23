@@ -2,6 +2,7 @@
 import discord
 from discord_bot.player_value import find_value, similar_value
 from discord_bot.combine import get_combine_results
+from discord_bot.snaps import get_snap_counts
 import os
 
 TOKEN = os.environ["CHAT_BOT_TOKEN"]
@@ -29,6 +30,10 @@ async def on_message(message):
     if message.content.startswith('!combine'):
         name = message.content[len('!combine'):].strip()
         await message.channel.send(get_combine_results(name))
+
+    if message.content.startswith('!snaps'):
+        name = message.content[len('!snaps'):].strip()
+        await message.channel.send(get_snap_counts(name))
 
 
 @client.event
