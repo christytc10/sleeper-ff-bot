@@ -10,7 +10,7 @@ def parse_row(row):
     for key in keys:
         if row[key] is not None and row[key] != "":
             try:
-                val = f"{float(row[key]) * 100}%"
+                val = f"{round(float(row[key]) * 100, 2)}%"
             except ValueError:
                 val = row[key]
 
