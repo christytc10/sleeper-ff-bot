@@ -1,41 +1,47 @@
 import csv
 import difflib
+import os
+import re
+
 from fuzzywuzzy import fuzz
-prices = {}
+from notifications.bot import get_current_week
 
 
-def parse_row(row):
-    keys = list(row.keys())
-    combine_string = ""
-    for key in keys:
-        if row[key] is not None and row[key] != "":
-            try:
-                val = f"{round(float(row[key]) * 100, 2)}%"
-            except ValueError:
-                val = row[key]
-
-            combine_string += f"{key}: {val}\n"
-
-    return combine_string
-
-
-def load_prices():
-    with open("discord_bot/snaps/snap.csv") as f:
+def get_snap_counts_for_week(player_name, week):
+    snap_counts = {}
+    fname = f"discord_bot/weekly_stats/wk{week}.csv"
+    if not os.path.isfile(fname):
+        return None
+    with open(fname) as f:
         records = csv.DictReader(f)
         for row in records:
-            prices[row['Player']] = parse_row(row)
+            snap_counts[row['Player']] = row['Snap %']
+
+    matches = difflib.get_close_matches(player_name, snap_counts)
+    if len(matches) == 0:
+        print('Could not determine snap count for ' + player_name)
+        return 0
+    ratio = fuzz.ratio(matches[0].lower(), player_name.lower())
+    if ratio > 80:
+        return snap_counts.get(matches[0])
+    else:
+        print(f'Closest match for {player_name} is {matches[0]}(ratio:{ratio}). Not close enough')
+        return 0
 
 
 def get_snap_counts(player_name):
-    if prices is None or len(prices) == 0:
-        load_prices()
-    matches = difflib.get_close_matches(player_name, prices)
-    if len(matches) == 0:
-        print('Could not determine value for ' + player_name)
-        return "No idea"
-    ratio = fuzz.ratio(matches[0].lower(), player_name.lower())
-    if ratio > 80:
-        return prices.get(matches[0])
-    else:
-        print(f'Closest match for {player_name} is {matches[0]}(ratio:{ratio}). Not close enough')
-        return "No idea"
+    snaps = {}
+    for week in range(1, get_current_week() + 1):
+        snap_count = get_snap_counts_for_week(player_name, week)
+        if snap_count in [None, "-", ""]:
+            snap_count = 0.0
+        else:
+            snap_count = float(re.findall("\d+\.\d+", snap_count)[0])
+        snaps[f"Week-{week}"] = snap_count
+
+    raw = [x for x in snaps.values() if x > 0]
+    snaps['Avg (active)'] = round(sum(raw) / len(raw), 2)
+    snaps_string = f'{player_name} snap counts\n'
+    for key in snaps.keys():
+        snaps_string += f"{key}: {snaps[key]}\n"
+    return snaps_string
