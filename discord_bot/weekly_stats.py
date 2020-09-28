@@ -9,9 +9,14 @@ def parse_row(row):
     keys = list(row.keys())
     row_string = ""
     for key in keys:
-        if row[key] is not None and row[key] != "":
-            val = row[key]
-            row_string += f"{key}: {val}\n"
+        if row[key] in [None, "", "-"]:
+            continue
+        if key.startswith("TM "):
+            continue
+        if row[key] is not "QB" and key.startswith("Pass"):
+            continue
+        val = row[key]
+        row_string += f"{key}: {val}\n"
     return row_string
 
 
