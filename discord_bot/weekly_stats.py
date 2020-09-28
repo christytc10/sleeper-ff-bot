@@ -8,12 +8,13 @@ import re
 def parse_row(row):
     keys = list(row.keys())
     row_string = ""
+    position = row['POS']
     for key in keys:
         if row[key] in [None, "", "-"]:
             continue
         if key.startswith("TM "):
             continue
-        if row[key] is not "QB" and key.startswith("Pass"):
+        if position != "QB" and key.startswith("Pass"):
             continue
         val = row[key]
         row_string += f"{key}: {val}\n"
