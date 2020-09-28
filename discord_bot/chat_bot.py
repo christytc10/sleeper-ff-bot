@@ -52,7 +52,6 @@ async def on_message(message):
         await message.channel.send(commands_string)
 
 
-
 @client.event
 async def on_ready():
     print('Logged in as')
