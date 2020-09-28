@@ -48,7 +48,7 @@ async def on_message(message):
                           "!similar {player name} will find players of perceived similar value\n" \
                           "!combine {player name} will grab available combine results for a player\n" \
                           "!snaps {player name} will show snap counts broken down by week for a player\n" \
-                          "!week {game week} {player name} will list some metrics on a player's weekly performance\n" \
+                          "!week {game week} {player name} will list some metrics on a player's weekly performance\n"
         await message.channel.send(commands_string)
 
 
