@@ -39,10 +39,18 @@ async def on_message(message):
 
     if message.content.startswith('!week'):
         week = re.findall('\d+', message.content)[0]
-        print(week)
-        print(message.content[message.content.find(week) + len(week):].strip())
         name = message.content[message.content.find(week) + len(week):].strip()
         await message.channel.send(get_weekly_stats(name, week))
+
+    if message.content.startswith('!help'):
+        commands_string = "Commands you can run:\n\n!hello - tests the bot is up\n" \
+                          "!value {player name} will try and value the player\n" \
+                          "!similar {player name} will find players of perceived similar value\n" \
+                          "!combine {player name} will grab available combine results for a player\n" \
+                          "!snaps {player name} will show snap counts broken down by week for a player\n" \
+                          "!week {game week} {player name} will list some metrics on a player's weekly performance\n" \
+        await message.channel.send(commands_string)
+
 
 
 @client.event
