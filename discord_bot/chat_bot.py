@@ -3,7 +3,9 @@ import discord
 from discord_bot.player_value import find_value, similar_value
 from discord_bot.combine import get_combine_results
 from discord_bot.snaps import get_snap_counts
+from discord_bot.weekly_stats import get_weekly_stats
 import os
+import re
 
 TOKEN = os.environ["CHAT_BOT_TOKEN"]
 client = discord.Client()
@@ -34,6 +36,13 @@ async def on_message(message):
     if message.content.startswith('!snaps'):
         name = message.content[len('!snaps'):].strip()
         await message.channel.send(get_snap_counts(name))
+
+    if message.content.startswith('!week'):
+        week = re.findall('\d+', message.content)[0]
+        print(week)
+        print(message.content[message.content.find(week) + len(week):].strip())
+        name = message.content[message.content.find(week) + len(week):].strip()
+        await message.channel.send(get_weekly_stats(name, week))
 
 
 @client.event
