@@ -4,6 +4,7 @@ from discord_bot.player_value import find_value, similar_value
 from discord_bot.combine import get_combine_results
 from discord_bot.snaps import get_snap_counts
 from discord_bot.weekly_stats import get_weekly_stats
+from discord_bot.card_check import get_injured_starters
 import os
 import re
 
@@ -42,13 +43,17 @@ async def on_message(message):
         name = message.content[message.content.find(week) + len(week):].strip()
         await message.channel.send(get_weekly_stats(name, week))
 
+    if message.content.startswith('!cardcheck'):
+        await message.channel.send(get_injured_starters())
+
     if message.content.startswith('!help'):
         commands_string = "Commands you can run:\n\n!hello - tests the bot is up\n" \
                           "!value {player name} will try and value the player\n" \
                           "!similar {player name} will find players of perceived similar value\n" \
                           "!combine {player name} will grab available combine results for a player\n" \
                           "!snaps {player name} will show snap counts broken down by week for a player\n" \
-                          "!week {game week} {player name} will list some metrics on a player's weekly performance\n"
+                          "!week {game week} {player name} will list some metrics on a player's weekly performance\n" \
+                          "!cardcheck - will list any starters\n"
         await message.channel.send(commands_string)
 
 
