@@ -10,7 +10,7 @@ def parse_row(row):
     row_string = ""
     position = row['POS']
     for key in keys:
-        if row[key] in [None, "", "-"]:
+        if row[key] in [None, "", "-", "0.0"]:
             continue
         if key.startswith("TM "):
             continue
