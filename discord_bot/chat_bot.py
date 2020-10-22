@@ -57,7 +57,8 @@ async def on_message(message):
                           "!combine {player name} will grab available combine results for a player\n" \
                           "!snaps {player name} will show snap counts broken down by week for a player\n" \
                           "!week {game week} {player name} will list some metrics on a player's weekly performance\n" \
-                          "!cardcheck - will list any starters\n"
+                          "!cardcheck - will list any starters\n" \
+                          "!ages - will list roster ages\n"
         await message.channel.send(commands_string)
 
 

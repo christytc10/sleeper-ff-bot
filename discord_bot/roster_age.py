@@ -19,7 +19,7 @@ def get_roster_ages(league_id=522501269823889408):
     age_string = "Roster Ages:\n"
     sort_orders = sorted(rostered_ages.items(), key=lambda x: x[1], reverse=True)
     for roster_age in sort_orders:
-        age_string += f"{roster_age}\n"
+        age_string += f"{roster_age[0]}: {round(roster_age[1], 2)}\n"
 
     return age_string
 
