@@ -5,6 +5,7 @@ from discord_bot.combine import get_combine_results
 from discord_bot.snaps import get_snap_counts
 from discord_bot.weekly_stats import get_weekly_stats
 from discord_bot.card_check import get_injured_starters
+from discord_bot.roster_age import get_roster_ages
 import os
 import re
 
@@ -45,6 +46,9 @@ async def on_message(message):
 
     if message.content.startswith('!cardcheck'):
         await message.channel.send(get_injured_starters())
+
+    if message.content.startswith('!ages'):
+        await message.channel.send(get_roster_ages())
 
     if message.content.startswith('!help'):
         commands_string = "Commands you can run:\n\n!hello - tests the bot is up\n" \
