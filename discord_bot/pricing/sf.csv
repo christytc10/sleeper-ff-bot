@@ -1,357 +1,357 @@
 name,position,team,value
-"Christian McCaffrey",RB,CAR,876.7813
-"Lamar Jackson",QB,BAL,858.4022
-"Patrick Mahomes",QB,KCC,843.7735
-"Alvin Kamara",RB,NOS,821.9401
-"Kyler Murray",QB,ARI,755.1263
-"Russell Wilson",QB,SEA,753.2169
-"Ezekiel Elliott",RB,DAL,751.3377
+"Christian McCaffrey",RB,CAR,894.599
+"Patrick Mahomes",QB,KCC,883.7294
+"Lamar Jackson",QB,BAL,876.0958
+"Alvin Kamara",RB,NOS,807.939
+"Ezekiel Elliott",RB,DAL,761.1278
+"Kyler Murray",QB,ARI,757.166
+"Russell Wilson",QB,SEA,756.021
 2020.1.01,0,0,700
-"Deshaun Watson",QB,HOU,685.1165
-"Davante Adams",WR,GBP,667.4699
-"Jonathan Taylor",RB,IND,662.5326
-"Saquon Barkley",RB,NYG,653.1968
-"Dalvin Cook",RB,MIN,639.9071
-"Josh Allen",QB,BUF,636.6938
-"DeAndre Hopkins",WR,ARI,635.3707
-"Josh Jacobs",RB,LVR,633.3387
+"Deshaun Watson",QB,HOU,680.5618
+"Saquon Barkley",RB,NYG,669.0202
+"Davante Adams",WR,GBP,667.9966
+"Jonathan Taylor",RB,IND,661.1125
+"Josh Allen",QB,BUF,639.6486
+"Josh Jacobs",RB,LVR,638.5625
+"DeAndre Hopkins",WR,ARI,629.7226
+"Dalvin Cook",RB,MIN,629.342
 2020.1.02,0,0,625.2055
-"Michael Thomas",WR,NOS,619.5582
-"Clyde Edwards-Helaire",RB,KCC,611.2126
-"Tyreek Hill",WR,KCC,591.7733
-"Joe Burrow",QB,CIN,587.9898
-"Dak Prescott",QB,DAL,578.5839
-"Chris Godwin",WR,TBB,561.4095
-"Miles Sanders",RB,PHI,560.9935
+"Michael Thomas",WR,NOS,613.8351
+"Joe Burrow",QB,CIN,607.7072
+"Clyde Edwards-Helaire",RB,KCC,604.7885
+"Miles Sanders",RB,PHI,574.9064
+"Tyreek Hill",WR,KCC,569.2911
+"Dak Prescott",QB,DAL,564.2676
 2020.1.03,0,0,558.4027
-"George Kittle",TE,SFO,523.9565
-"Aaron Jones",RB,GBP,514.164
-"DK Metcalf",WR,SEA,513.7667
+"Chris Godwin",WR,TBB,537.3385
+"George Kittle",TE,SFO,536.0449
+"Aaron Jones",RB,GBP,517.9508
+"DK Metcalf",WR,SEA,506.8191
 2020.1.04,0,0,498.7377
-"Nick Chubb",RB,CLE,482.7281
-"Calvin Ridley",WR,ATL,475.3841
-"Justin Herbert",QB,LAC,467.0373
-"Derrick Henry",RB,TEN,459.8489
-"Joe Mixon",RB,CIN,454.837
+"Nick Chubb",RB,CLE,491.4912
+"Derrick Henry",RB,TEN,479.4265
+"Justin Herbert",QB,LAC,470.4894
+"Calvin Ridley",WR,ATL,466.8508
+"Joe Mixon",RB,CIN,446.934
 2020.1.05,0,0,445.4479
-"Amari Cooper",WR,DAL,435.8125
-"CeeDee Lamb",WR,DAL,434.7501
-"AJ Brown",WR,TEN,432.5729
-"Aaron Rodgers",QB,GBP,428.097
-"Travis Kelce",TE,KCC,423.3948
-"JuJu Smith-Schuster",WR,PIT,408.2859
-"DJ Moore",WR,CAR,406.1267
-"Mike Evans",WR,TBB,404.7357
-"Kenny Golladay",WR,DET,403.7159
-"JK Dobbins",RB,BAL,400.6614
+"CeeDee Lamb",WR,DAL,443.2552
+"AJ Brown",WR,TEN,439.8572
+"Amari Cooper",WR,DAL,427.1058
+"Aaron Rodgers",QB,GBP,423.5454
+"Travis Kelce",TE,KCC,408.8826
+"Kenny Golladay",WR,DET,408.0045
+"DJ Moore",WR,CAR,402.6804
 2020.1.06,0,0,397.8521
-"Allen Robinson",WR,CHI,381.4753
-"Jared Goff",QB,LAR,378.5899
-"Matt Ryan",QB,ATL,363.8672
-"Julio Jones",WR,ATL,354.9893
-"Carson Wentz",QB,PHI,353.1324
-"Cam Newton",QB,NEP,350.9773
-"Odell Beckham",WR,CLE,348.9581
-"Austin Ekeler",RB,LAC,334.0405
-"Baker Mayfield",QB,CLE,332.7358
-"Tua Tagovailoa",QB,MIA,329.8703
-"Stefon Diggs",WR,BUF,325.647
-"Terry McLaurin",WR,WAS,325.0669
-"Mark Andrews",TE,BAL,321.4973
-"Ryan Tannehill",QB,TEN,305.738
-"D'Andre Swift",RB,DET,305.3561
+"Mike Evans",WR,TBB,395.0001
+"JK Dobbins",RB,BAL,392.1775
+"JuJu Smith-Schuster",WR,PIT,390.7318
+"Jared Goff",QB,LAR,379.4195
+"Allen Robinson",WR,CHI,378.0071
+"Carson Wentz",QB,PHI,364.0232
+"Matt Ryan",QB,ATL,355.0757
+"Cam Newton",QB,NEP,349.2988
+"Odell Beckham",WR,CLE,339.2698
+"Julio Jones",WR,ATL,339.2097
+"Stefon Diggs",WR,BUF,331.7998
+"Austin Ekeler",RB,LAC,328.4082
+"Tua Tagovailoa",QB,MIA,326.428
+"Baker Mayfield",QB,CLE,323.9843
+"Terry McLaurin",WR,WAS,319.5059
+"Ryan Tannehill",QB,TEN,317.207
+"D'Andre Swift",RB,DET,313.351
+"Mark Andrews",TE,BAL,312.7348
+"Matthew Stafford",QB,DET,300.7818
 2020.1.07,0,0,300.2478
-"Cooper Kupp",WR,LAR,294.6613
-"Matthew Stafford",QB,DET,294.14
-"Justin Jefferson",WR,MIN,290.2256
-"Keenan Allen",WR,LAC,287.4575
-"Kareem Hunt",RB,CLE,280.9705
-"Jerry Jeudy",WR,DEN,278.7199
-"Tyler Lockett",WR,SEA,278.4077
+"Kareem Hunt",RB,CLE,296.7215
+"Justin Jefferson",WR,MIN,296.019
+"Cooper Kupp",WR,LAR,292.3857
+"Keenan Allen",WR,LAC,289.4628
+"Gardner Minshew",QB,JAC,284.2881
+"Jerry Jeudy",WR,DEN,277.2729
 2020.1.08,0,0,275.7813
-"Courtland Sutton",WR,DEN,270.2848
-"Daniel Jones",QB,NYG,269.4647
-"Gardner Minshew",QB,JAC,269.1555
-"DJ Chark",WR,JAC,263.4367
-"James Robinson",RB,JAC,261.1375
-"Chris Carson",RB,SEA,259.7488
+"Courtland Sutton",WR,DEN,274.2816
+"Tyler Lockett",WR,SEA,271.7299
+"DJ Chark",WR,JAC,265.8752
+"James Robinson",RB,JAC,262.6233
+"Daniel Jones",QB,NYG,262.0947
 2020.1.09,0,0,253.3085
 2021.1,0,0,253.3085
-"Cam Akers",RB,LAR,243.9917
-"James Conner",RB,PIT,241.5487
-"Tyler Boyd",WR,CIN,240.43
-"Antonio Gibson",RB,WAS,237.9061
-"Darren Waller",TE,LVR,234.9633
+"Chris Carson",RB,SEA,249.0282
+"Antonio Gibson",RB,WAS,248.6323
+"James Conner",RB,PIT,242.1037
+"Cam Akers",RB,LAR,241.8807
+"Darren Waller",TE,LVR,232.9262
 2020.1.10,0,0,232.667
-"Robert Woods",WR,LAR,230.9503
-"Jalen Reagor",WR,PHI,214.9419
-"Adam Thielen",WR,MIN,214.844
-2022.1,0,0,213.7075
+"Robert Woods",WR,LAR,232.2469
+"Tyler Boyd",WR,CIN,228.9621
+"Jalen Reagor",WR,PHI,219.1973
+"Adam Thielen",WR,MIN,216.44
+"Derek Carr",QB,LVR,215.5742
 2020.1.11,0,0,213.7075
-"Derek Carr",QB,LVR,209.2495
-"David Montgomery",RB,CHI,208.1533
-"Marquise Brown",WR,BAL,202.6368
-"Todd Gurley",RB,ATL,202.122
-"Deebo Samuel",WR,SFO,200.3784
-"Diontae Johnson",WR,PIT,198.5424
-"Jimmy Garoppolo",QB,SFO,197.9406
+2022.1,0,0,213.7075
+"David Montgomery",RB,CHI,213.1096
+"Jimmy Garoppolo",QB,SFO,204.1465
+"Todd Gurley",RB,ATL,200.9943
+"Marquise Brown",WR,BAL,200.4986
 2020.1.12,0,0,196.2929
-"Drew Lock",QB,DEN,192.9894
-"Kenyan Drake",RB,ARI,192.5979
-"Noah Fant",TE,DEN,188.8958
-"Kirk Cousins",QB,MIN,187.9405
-"Leonard Fournette",RB,TBB,185.5092
-"Melvin Gordon",RB,DEN,183.2524
-"Teddy Bridgewater",QB,CAR,182.7223
+"Deebo Samuel",WR,SFO,196.0035
+"Drew Lock",QB,DEN,189.1415
+"Kirk Cousins",QB,MIN,185.6993
+"Diontae Johnson",WR,PIT,184.469
+"Teddy Bridgewater",QB,CAR,184.347
+"Melvin Gordon",RB,DEN,183.6333
+"Noah Fant",TE,DEN,181.4809
 2020.2.01,0,0,180.2975
-"Zach Ertz",TE,PHI,175.6425
-"Ben Roethlisberger",QB,PIT,169.2963
+"Tee Higgins",WR,CIN,178.4709
+"Kenyan Drake",RB,ARI,177.7172
+"Leonard Fournette",RB,TBB,177.3356
+"Ben Roethlisberger",QB,PIT,167.8193
+"Hunter Henry",TE,LAC,165.8501
 2020.2.02,0,0,165.6054
-"Tee Higgins",WR,CIN,165.1647
-"Sam Darnold",QB,NYJ,160.8435
-"Laviska Shenault",WR,JAC,159.8315
-"Michael Gallup",WR,DAL,159.5268
-"DeVante Parker",WR,MIA,158.3422
-"Tom Brady",QB,TBB,156.9958
-"Hunter Henry",TE,LAC,156.9531
-"Will Fuller",WR,HOU,156.2383
-"Jonnu Smith",TE,TEN,155.2299
-"Evan Engram",TE,NYG,153.5397
-"Devin Singletary",RB,BUF,152.4584
+"Zach Ertz",TE,PHI,165.4012
+"Sam Darnold",QB,NYJ,165.0167
+"Will Fuller",WR,HOU,162.8018
+"Michael Gallup",WR,DAL,160.9882
+"Laviska Shenault",WR,JAC,159.6899
+"DeVante Parker",WR,MIA,159.4243
+"Tom Brady",QB,TBB,158.9082
+"Jonnu Smith",TE,TEN,155.8093
+"Brandon Aiyuk",WR,SFO,154.5164
+"Devin Singletary",RB,BUF,154.2772
 2020.2.03,0,0,152.1106
-"Drew Brees",QB,NOS,143.7014
-"Brandon Aiyuk",WR,SFO,142.1554
+"Evan Engram",TE,NYG,148.222
+"Chase Claypool",WR,PIT,144.1818
+"Henry Ruggs",WR,LVR,141.5164
 2020.2.04,0,0,139.7155
-"Le'Veon Bell",RB,KCC,139.6746
-"TJ Hockenson",TE,DET,139.4083
-"Raheem Mostert",RB,SFO,138.5643
-"Henry Ruggs",WR,LVR,138.4441
-"Jarvis Landry",WR,CLE,132.2518
-"Joshua Kelley",RB,LAC,130.4355
-"Darrell Henderson",RB,LAR,128.8281
+"Raheem Mostert",RB,SFO,138.7792
+"TJ Hockenson",TE,DET,137.0952
+"Drew Brees",QB,NOS,136.0111
+"Le'Veon Bell",RB,KCC,135.4743
+"Darrell Henderson",RB,LAR,132.3608
+"Jarvis Landry",WR,CLE,130.6067
 2020.2.05,0,0,128.3304
-"Darius Slayton",WR,NYG,127.2931
-"David Johnson",RB,HOU,125.6275
-"Chase Claypool",WR,PIT,125.4866
+"Darius Slayton",WR,NYG,127.4288
+"David Johnson",RB,HOU,126.1897
+"Ronald Jones",RB,TBB,121.769
 2020.2.06,0,0,117.873
-"N'Keal Harry",WR,NEP,115.595
+"N'Keal Harry",WR,NEP,117.2856
+"Robby Anderson",WR,CAR,111.3233
 2020.2.07,0,0,108.2678
-"Dallas Goedert",TE,PHI,108.1904
-"Ronald Jones",RB,TBB,108.1419
-"Robby Anderson",WR,CAR,107.3872
-"Mike Gesicki",TE,MIA,106.8961
+"Mike Gesicki",TE,MIA,105.9625
+"Dallas Goedert",TE,PHI,104.2201
+"Joshua Kelley",RB,LAC,104.0598
 2020.2.08,0,0,99.4453
-"Nick Foles",QB,CHI,96.6148
-"Tyler Higbee",TE,LAR,96.2286
-"James White",RB,NEP,93.2676
-"Christian Kirk",WR,ARI,92.1258
-"Mecole Hardman",WR,KCC,91.8611
+"Mecole Hardman",WR,KCC,95.125
+"Tyler Higbee",TE,LAR,95.0976
+"Andy Dalton",QB,DAL,92.9108
+"James White",RB,NEP,91.4035
 2020.2.09,0,0,91.3418
 2021.2,0,0,91.3418
-"Andy Dalton",QB,DAL,85.8032
-"Brandin Cooks",WR,HOU,84.348
+"Christian Kirk",WR,ARI,90.6326
+"Philip Rivers",QB,IND,88.9238
+"Jamison Crowder",WR,NYJ,88.2731
 2020.2.10,0,0,83.8985
-"Denzel Mims",WR,NYJ,82.2185
-"Philip Rivers",QB,IND,82.1337
-"Zack Moss",RB,BUF,81.956
-"Mike Williams",WR,LAC,81.8917
-"TY Hilton",WR,IND,79.9201
-"Bryan Edwards",WR,LVR,79.6567
-"Jamison Crowder",WR,NYJ,78.4951
-2022.2,0,0,77.0618
+"Brandin Cooks",WR,HOU,83.1982
+"Zack Moss",RB,BUF,82.5669
+"Mike Williams",WR,LAC,82.2882
+"Phillip Lindsay",RB,DEN,81.6047
+"Michael Pittman",WR,IND,79.3854
+"TY Hilton",WR,IND,78.7937
+"Chase Edmonds",RB,ARI,78.6566
+"Denzel Mims",WR,NYJ,78.2186
+"Bryan Edwards",WR,LVR,77.9633
+"Myles Gaskin",RB,MIA,77.7834
 2020.2.11,0,0,77.0618
-"Phillip Lindsay",RB,DEN,76.6672
-"Damien Harris",RB,NEP,75.5159
-"Chase Edmonds",RB,ARI,75.1716
-"Myles Gaskin",RB,MIA,74.6962
-"Robert Tonyan",TE,GBP,74.3179
-"Michael Pittman",WR,IND,72.6137
-"Corey Davis",WR,TEN,71.1415
+2022.2,0,0,77.0618
+"Robert Tonyan",TE,GBP,76.6874
+"Nick Foles",QB,CHI,74.6453
+"Damien Harris",RB,NEP,73.5867
 2020.2.12,0,0,70.7822
-"Austin Hooper",TE,CLE,68.7246
-"Alexander Mattison",RB,MIN,67.0844
-"AJ Green",WR,CIN,65.2821
+"Alexander Mattison",RB,MIN,70.2299
+"Austin Hooper",TE,CLE,69.8337
+"Corey Davis",WR,TEN,68.3258
+"Parris Campbell",WR,IND,65.3129
 2020.3.01,0,0,65.0144
-"Hayden Hurst",TE,ATL,64.6686
-"Jordan Love",QB,GBP,64.4797
-"Allen Lazard",WR,GBP,64.1119
-"Julian Edelman",WR,NEP,63.2502
-"Ryan Fitzpatrick",QB,MIA,61.9651
-"Parris Campbell",WR,IND,61.6018
-"Preston Williams",WR,MIA,59.7716
+"Hayden Hurst",TE,ATL,64.8406
+"AJ Green",WR,CIN,63.5187
+"Ryan Fitzpatrick",QB,MIA,61.9767
+"Allen Lazard",WR,GBP,60.5368
+"Julian Edelman",WR,NEP,59.8056
 2020.3.02,0,0,59.7165
-"Mo Alie-Cox",TE,IND,56.0573
-"AJ Dillon",RB,GBP,55.7197
-"Mark Ingram",RB,BAL,55.1464
+"Preston Williams",WR,MIA,59.6159
+"AJ Dillon",RB,GBP,55.2116
+"Nyheim Hines",RB,IND,55.167
 2020.3.03,0,0,54.8503
-"Nyheim Hines",RB,IND,54.7459
-"Anthony Miller",WR,CHI,54.0671
-"Jerick McKinnon",RB,SFO,53.8666
+"Mark Ingram",RB,BAL,54.4877
+"Mo Alie-Cox",TE,IND,54.0671
+"Anthony Miller",WR,CHI,54.053
+"Kyle Allen",QB,WAS,52.191
 2020.3.04,0,0,50.3807
-"Sammy Watkins",WR,KCC,47.9484
-"Latavius Murray",RB,NOS,46.4035
+"Jerick McKinnon",RB,SFO,49.1074
+"Dwayne Haskins",QB,WAS,48.5146
+"Sammy Watkins",WR,KCC,48.2539
+"Mike Davis",RB,CAR,48.034
+"Tony Pollard",RB,DAL,47.1947
+"Latavius Murray",RB,NOS,46.44
 2020.3.05,0,0,46.2753
-"Kyle Allen",QB,WAS,46.0925
-"Dwayne Haskins",QB,WAS,45.9342
-"Tony Pollard",RB,DAL,45.1542
-"Mike Davis",RB,CAR,44.2167
-"Tre'Quan Smith",WR,NOS,44.1101
-"Tarik Cohen",RB,CHI,44.0339
-"Jared Cook",TE,NOS,43.6872
-"Jalen Hurts",QB,PHI,42.9038
-"John Brown",WR,BUF,42.525
+"Jordan Love",QB,GBP,45.5381
+"Jalen Hurts",QB,PHI,44.0085
 2020.3.06,0,0,42.5044
-"Scott Miller",WR,TBB,42.0323
-"Logan Thomas",TE,WAS,40.1904
-"Curtis Samuel",WR,CAR,39.9451
+"Tarik Cohen",RB,CHI,42.3922
+"Jared Cook",TE,NOS,42.3028
+"Scott Miller",WR,TBB,42.2779
+"John Brown",WR,BUF,41.7835
+"Ke'Shawn Vaughn",RB,TBB,40.5891
 2020.3.07,0,0,39.0408
-"Ke'Shawn Vaughn",RB,TBB,37.8084
-"OJ Howard",TE,TBB,37.3344
-"Devonta Freeman",RB,NYG,36.9104
-"Jameis Winston",QB,NOS,36.3983
-"Rashaad Penny",RB,SEA,36.3897
+"Devonta Freeman",RB,NYG,37.9159
+"Irv Smith Jr",TE,MIN,37.7714
+"Tre'Quan Smith",WR,NOS,37.7257
+"Curtis Samuel",WR,CAR,37.4236
+"Rashaad Penny",RB,SEA,35.9095
 2020.3.08,0,0,35.8595
-"Russell Gage",WR,ATL,35.7806
-"Jarrett Stidham",QB,NEP,35.4925
-"Irv Smith Jr",TE,MIN,35.3288
-"Marlon Mack",RB,IND,35.1396
-"Dalton Schultz",TE,DAL,35.0659
-"Kerryon Johnson",RB,DET,34.8497
-"Gabriel Davis",WR,BUF,34.2816
-"Sony Michel",RB,NEP,33.8623
-"Hunter Renfrow",WR,LVR,33.7466
-"Sterling Shepard",WR,NYG,33.5752
+"Russell Gage",WR,ATL,34.9746
+"Jameis Winston",QB,NOS,34.8502
+"Gabriel Davis",WR,BUF,34.6781
+"Kerryon Johnson",RB,DET,34.6288
+"Marlon Mack",RB,IND,34.5634
+"Travis Fulgham",WR,PHI,34.554
+"Eric Ebron",TE,PIT,34.2306
+"Dalton Schultz",TE,DAL,34.1825
+"Emmanuel Sanders",WR,NOS,34.1179
+"OJ Howard",TE,TBB,33.8088
+"Sterling Shepard",WR,NYG,33.8036
+"Hunter Renfrow",WR,LVR,33.7188
+"Logan Thomas",TE,WAS,33.426
+"Quintez Cephus",WR,DET,33.3895
 2020.3.09,0,0,32.9374
 2021.3,0,0,32.9374
-"Travis Fulgham",WR,PHI,32.8604
-"KJ Hamler",WR,DEN,32.7551
-"Quintez Cephus",WR,DET,32.4064
-"Eric Ebron",TE,PIT,32.0374
-"Golden Tate",WR,NYG,31.9513
-"Jacob Eason",QB,IND,31.8284
-"Marquez Valdes-Scantling",WR,GBP,31.6264
-"Rob Gronkowski",TE,TBB,31.5795
-"Marvin Jones",WR,DET,31.0813
-"Van Jefferson",WR,LAR,30.6215
-"Emmanuel Sanders",WR,NOS,30.585
+"Rob Gronkowski",TE,TBB,32.229
+"Matt Breida",RB,MIA,32.0826
+"Tim Patrick",WR,DEN,32.0375
+"Jacob Eason",QB,IND,31.9503
+"Andy Isabella",WR,ARI,30.9385
+"Marquez Valdes-Scantling",WR,GBP,30.9186
+"Sony Michel",RB,NEP,30.7032
 2020.3.10,0,0,30.2534
 "Damien Williams",RB,KCC,30.1974
-"Boston Scott",RB,PHI,29.6388
-"Darrynton Evans",RB,TEN,29.1798
-"Andy Isabella",WR,ARI,28.6047
-"Gerald Everett",TE,LAR,28.5268
-"Mitchell Trubisky",QB,CHI,28.3878
-"Tim Patrick",WR,DEN,28.3068
-"Adrian Peterson",RB,DET,28.169
+"Boston Scott",RB,PHI,29.8159
+"KJ Hamler",WR,DEN,29.1773
+"Van Jefferson",WR,LAR,29.1537
+"Mitchell Trubisky",QB,CHI,29.1005
+"Anthony McFarland",RB,PIT,28.7403
+"Marvin Jones",WR,DET,28.2133
+"Adrian Peterson",RB,DET,28.1618
 2022.3,0,0,27.7881
 2020.3.11,0,0,27.7881
-"Duke Johnson",RB,HOU,27.0496
-"Anthony McFarland",RB,PIT,26.9649
-"Lamical Perine",RB,NYJ,26.4368
-"Nick Mullens",QB,SFO,26.1867
+"Gerald Everett",TE,LAR,27.5644
+"Darrynton Evans",RB,TEN,27.3951
+"Duke Johnson",RB,HOU,27.1361
+"Lamical Perine",RB,NYJ,26.6597
 2020.3.12,0,0,25.5237
-"Matt Breida",RB,MIA,25.2476
-"Justin Jackson",RB,LAC,25.0331
-"Chris Herndon",TE,NYJ,24.4523
-"Antonio Gandy-Golden",WR,WAS,24.0019
+"Golden Tate",WR,NYG,24.972
+"Justin Jackson",RB,LAC,24.7957
+"Jimmy Graham",TE,CHI,24.0945
+"Chris Herndon",TE,NYJ,24.0465
+"Nick Mullens",QB,SFO,23.5937
+"Ian Thomas",TE,CAR,23.587
 2020.4.01,0,0,23.4438
-"Tyrell Williams",WR,LVR,23.1415
-"Lynn Bowden",RB,MIA,23.1164
-"Ian Thomas",TE,CAR,23.1068
-"Miles Boykin",WR,BAL,23.0608
-"Malcolm Brown",RB,LAR,22.9597
-"Justice Hill",RB,BAL,22.5409
-"David Njoku",TE,CLE,22.2009
-"Jordan Howard",RB,MIA,21.634
+"Antonio Gandy-Golden",WR,WAS,23.3532
+"Miles Boykin",WR,BAL,23.3408
+"Tyrell Williams",WR,LVR,23.1807
+"Keelan Cole",WR,JAC,23.0881
+"Lynn Bowden",RB,MIA,22.8837
+"Justice Hill",RB,BAL,22.6704
+"Jarrett Stidham",QB,NEP,22.5258
+"Malcolm Brown",RB,LAR,22.4059
+"David Njoku",TE,CLE,22.3552
+"Blake Jarwin",TE,DAL,22.1709
+"James Washington",WR,PIT,21.6809
 2020.4.02,0,0,21.5335
-"Larry Fitzgerald",WR,ARI,21.3736
-"Blake Jarwin",TE,DAL,21.2335
-"James Washington",WR,PIT,21.1879
-"JJ Arcega-Whiteside",WR,PHI,21.0466
-"Jimmy Graham",TE,CHI,20.7475
-"Tevin Coleman",RB,SFO,20.5061
+"Jordan Howard",RB,MIA,21.4775
+"Darnell Mooney",WR,CHI,21.1606
+"JJ Arcega-Whiteside",WR,PHI,21.1303
+"Jack Doyle",TE,IND,21.0668
+"Larry Fitzgerald",WR,ARI,20.8204
 "Bryce Love",RB,WAS,20.4667
-"Darnell Mooney",WR,CHI,20.3151
-"Donovan Peoples-Jones",WR,CLE,20.3064
-"Benny Snell",RB,PIT,20.0384
-"Cole Beasley",WR,BUF,19.9122
-"Jack Doyle",TE,IND,19.8948
+"Tevin Coleman",RB,SFO,20.361
+"Cole Kmet",TE,CHI,20.1901
+"Will Dissly",TE,SEA,20.0635
+"Donovan Peoples-Jones",WR,CLE,20.0373
 2020.4.03,0,0,19.7787
-"Adam Trautman",TE,NOS,19.7305
-"Cole Kmet",TE,CHI,19.5638
-"Will Dissly",TE,SEA,19.189
-"Dawson Knox",TE,BUF,19.0357
-"Greg Olsen",TE,SEA,18.4294
-"Ryquell Armstead",RB,JAC,18.3232
+"Adam Trautman",TE,NOS,19.6198
+"Greg Olsen",TE,SEA,19.3345
+"Benny Snell",RB,PIT,19.0918
+"Cole Beasley",WR,BUF,18.8544
+"Ryquell Armstead",RB,JAC,18.3722
 2020.4.04,0,0,18.167
-"Devin Duvernay",WR,BAL,17.4029
-"Jacoby Brissett",QB,IND,16.8213
-"Harrison Bryant",TE,CLE,16.7095
+"Dawson Knox",TE,BUF,17.9502
+"Devin Duvernay",WR,BAL,16.7064
 2020.4.05,0,0,16.6866
-"Breshad Perriman",WR,NYJ,16.0627
-"Antonio Brown",WR,FA,15.8824
-"Tyrod Taylor",QB,LAC,15.6952
-"DeSean Jackson",WR,PHI,15.4223
+"Jacoby Brissett",QB,IND,16.6783
+"Breshad Perriman",WR,NYJ,16.384
+"Harrison Bryant",TE,CLE,16.2614
+"Tyrod Taylor",QB,LAC,15.668
+"Antonio Brown",WR,FA,15.643
+"DeSean Jackson",WR,PHI,15.4865
 2020.4.06,0,0,15.3269
-"John Ross",WR,CIN,14.6081
-"Marcus Mariota",QB,LVR,14.5571
+"John Ross",WR,CIN,14.7681
+"Marcus Mariota",QB,LVR,14.5795
 2020.4.07,0,0,14.0779
-"Ryan Griffin",TE,NYJ,14.0449
-"Keelan Cole",WR,JAC,13.5839
+"Ryan Griffin",TE,NYJ,14.0726
+"Trey Burton",TE,IND,13.078
 2020.4.08,0,0,12.9307
-"Alshon Jeffery",WR,PHI,12.4683
-"Jace Sternberger",TE,GBP,12.2975
-"CJ Uzomah",TE,CIN,11.9577
-2020.4.09,0,0,11.8771
+"Jace Sternberger",TE,GBP,12.6816
+"CJ Uzomah",TE,CIN,12.1577
+"Alshon Jeffery",WR,PHI,12.0564
 2021.4,0,0,11.8771
-"Gus Edwards",RB,BAL,11.6132
-"Jamaal Williams",RB,GBP,11.5178
-"Zach Pascal",WR,IND,11.0574
-"Trey Burton",TE,IND,11.0387
+2020.4.09,0,0,11.8771
+"Jamaal Williams",RB,GBP,11.8429
+"Frank Gore",RB,NYJ,11.4928
+"Zach Pascal",WR,IND,11.0081
 2020.4.10,0,0,10.9092
-"Greg Ward",WR,PHI,10.7418
-"Randall Cobb",WR,HOU,10.6388
-"Kyle Rudolph",TE,MIN,10.5642
-"Jaylen Samuels",RB,PIT,10.3964
-"Frank Gore",RB,NYJ,10.2793
-"Tyler Johnson",WR,TBB,10.0789
+"Randall Cobb",WR,HOU,10.7247
+"Gus Edwards",RB,BAL,10.6652
+"Greg Ward",WR,PHI,10.5839
+"Tyler Johnson",WR,TBB,10.192
+"Kyle Rudolph",TE,MIN,10.0785
+"Jaylen Samuels",RB,PIT,10.0617
 2022.4,0,0,10.0203
 2020.4.11,0,0,10.0203
-2022.5,0,0,10
-2020.5.06,0,0,10
-2020.5.02,0,0,10
-2020.5.03,0,0,10
-2020.5.04,0,0,10
-2020.5.05,0,0,10
-2020.5.10,0,0,10
 2020.5.07,0,0,10
-2020.5.08,0,0,10
-2020.5.09,0,0,10
+2020.5.05,0,0,10
 2020.5.11,0,0,10
-2020.5.12,0,0,10
-2021.5,0,0,10
-2020.5.01,0,0,10
+2020.5.09,0,0,10
 2020.4.12,0,0,10
-"Tyler Eifert",TE,JAC,9.8499
-"Josh Rosen",QB,TBB,9.8133
-"Jordan Akins",TE,HOU,9.6913
-"Taysom Hill",QB,NOS,9.5013
-"Jason Witten",TE,LVR,9.239
-"Chris Conley",WR,JAC,9.1319
-"Royce Freeman",RB,DEN,8.6387
-"Damiere Byrd",WR,NEP,8.5066
-"Foster Moreau",TE,LVR,8.4547
-"Darren Fells",TE,HOU,8.4342
-"JD McKissic",RB,WAS,8.3308
-"Devin Asiasi",TE,NEP,8.2264
-"Rex Burkhead",RB,NEP,7.8645
+2021.5,0,0,10
+2020.5.04,0,0,10
+2020.5.08,0,0,10
+2020.5.01,0,0,10
+2020.5.02,0,0,10
+2020.5.10,0,0,10
+2020.5.12,0,0,10
+2020.5.03,0,0,10
+2020.5.06,0,0,10
+2022.5,0,0,10
+"Tyler Eifert",TE,JAC,9.9037
+"Josh Rosen",QB,TBB,9.7787
+"Taysom Hill",QB,NOS,9.4411
+"Jordan Akins",TE,HOU,9.2928
+"Jason Witten",TE,LVR,9.2687
+"Chris Conley",WR,JAC,9.1179
+"Royce Freeman",RB,DEN,8.5978
+"Damiere Byrd",WR,NEP,8.4479
+"JD McKissic",RB,WAS,8.4319
+"Darren Fells",TE,HOU,8.4289
+"Giovani Bernard",RB,CIN,8.2123
+"Devin Asiasi",TE,NEP,8.0902
 "Jacob Hollister",TE,SEA,7.8496
-"Alex Smith",QB,WAS,7.6258
-"Auden Tate",WR,CIN,7.6128
+"Auden Tate",WR,CIN,7.6212
+"Alex Smith",QB,WAS,7.5955
 "Josh Reynolds",WR,LAR,7.5828
-"Nick Boyle",TE,BAL,7.4594
-"Collin Johnson",WR,JAC,7.1601
+"Nick Boyle",TE,BAL,7.4378
+"Rex Burkhead",RB,NEP,7.3482
 "Pierre Garcon",WR,SFO,7.0246
-"Giovani Bernard",RB,CIN,7.0074
 "Jeremy Sprinkle",TE,WAS,6.8798
-"Kaden Smith",TE,NYG,6.8036
+"Foster Moreau",TE,LVR,6.8638
+"Kaden Smith",TE,NYG,6.8327
+"Collin Johnson",WR,JAC,6.7891

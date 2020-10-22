@@ -5,7 +5,7 @@ from discord_bot.combine import get_combine_results
 from discord_bot.snaps import get_snap_counts
 from discord_bot.weekly_stats import get_weekly_stats
 from discord_bot.card_check import get_injured_starters
-from discord_bot.roster_age import get_roster_ages
+from discord_bot.roster_analysis import get_roster_ages
 import os
 import re
 
@@ -47,7 +47,7 @@ async def on_message(message):
     if message.content.startswith('!cardcheck'):
         await message.channel.send(get_injured_starters())
 
-    if message.content.startswith('!ages'):
+    if message.content.startswith('!roster age'):
         await message.channel.send(get_roster_ages())
 
     if message.content.startswith('!help'):
@@ -58,7 +58,8 @@ async def on_message(message):
                           "!snaps {player name} will show snap counts broken down by week for a player\n" \
                           "!week {game week} {player name} will list some metrics on a player's weekly performance\n" \
                           "!cardcheck - will list any starters\n" \
-                          "!ages - will list roster ages\n"
+                          "!roster age - will list roster ages\n" \
+                          "!roster value - will try and list roster values (no picks)\n"
         await message.channel.send(commands_string)
 
 
