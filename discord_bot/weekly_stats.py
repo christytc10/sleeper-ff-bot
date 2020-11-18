@@ -22,8 +22,7 @@ def parse_row(row):
 
 def get_weekly_stats(player_name, week):
     prices = {}
-    # fname = f"discord_bot/weekly_stats/weeklystats.csv"
-    fname = f"weekly_stats/weeklystats.csv"
+    fname = f"discord_bot/weekly_stats/weeklystats.csv"
     if not os.path.isfile(fname):
         return "No idea"
     with open(fname) as f:
