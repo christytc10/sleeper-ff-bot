@@ -44,6 +44,11 @@ async def on_message(message):
         name = message.content[message.content.find(week) + len(week):].strip()
         await message.channel.send(get_weekly_stats(name, week))
 
+    if message.content.startswith('!stat'):
+        name = re.findall(r'\"(.+?)\"', message.content)[0]
+        stat = re.findall(r'\"(.+?)\"', message.content)[1]
+        await message.channel.send(get_weekly_stats(name, stat))
+
     if message.content.startswith('!cardcheck'):
         await message.channel.send(get_injured_starters())
 
