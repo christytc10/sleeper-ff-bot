@@ -27,7 +27,7 @@ def get_weekly_stats(player_name, week):
         return "No idea"
     with open(fname) as f:
         records = csv.DictReader(f)
-        for row in (x for x in records if int(x['WK']) == week):
+        for row in (x for x in records if x['WK'] == week):
             prices[row['Player']] = parse_row(row)
     matches = difflib.get_close_matches(player_name, prices)
     if len(matches) == 0:
