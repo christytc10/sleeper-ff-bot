@@ -3,7 +3,7 @@ import discord
 from discord_bot.player_value import find_value, similar_value
 from discord_bot.combine import get_combine_results
 from discord_bot.snaps import get_snap_counts
-from discord_bot.weekly_stats import get_weekly_stats
+from discord_bot.weekly_stats import get_weekly_stats, get_player_stat
 from discord_bot.card_check import get_injured_starters
 from discord_bot.roster_analysis import get_roster_ages, get_roster_value
 import os
@@ -47,7 +47,7 @@ async def on_message(message):
     if message.content.startswith('!stat'):
         name = re.findall(r'\"(.+?)\"', message.content)[0]
         stat = re.findall(r'\"(.+?)\"', message.content)[1]
-        await message.channel.send(get_weekly_stats(name, stat))
+        await message.channel.send(get_player_stat(name, stat))
 
     if message.content.startswith('!cardcheck'):
         await message.channel.send(get_injured_starters())
