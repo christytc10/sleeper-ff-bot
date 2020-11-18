@@ -31,7 +31,7 @@ def get_weekly_stats(player_name, week):
             prices[row['Player']] = parse_row(row)
     matches = difflib.get_close_matches(player_name, prices)
     if len(matches) == 0:
-        print('Could not determine value for ' + player_name)
+        print(f'Could not determine stats for {player_name} in week {week}')
         return "No idea"
     ratio = fuzz.ratio(matches[0].lower(), player_name.lower())
     if ratio > 80:
