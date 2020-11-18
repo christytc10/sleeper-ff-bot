@@ -22,7 +22,8 @@ def parse_row(row):
 
 def get_weekly_stats(player_name, week):
     prices = {}
-    fname = f"discord_bot/weekly_stats/weeklystats.csv"
+    # fname = f"discord_bot/weekly_stats/weeklystats.csv"
+    fname = f"weekly_stats/weeklystats.csv"
     if not os.path.isfile(fname):
         return "No idea"
     with open(fname) as f:
@@ -39,3 +40,18 @@ def get_weekly_stats(player_name, week):
     else:
         print(f'Closest match for {player_name} is {matches[0]}(ratio:{ratio}). Not close enough')
         return "No idea"
+
+
+def get_player_stat(player_name, stat_name):
+    prices = {}
+    fname = f"discord_bot/weekly_stats/weeklystats.csv"
+    if not os.path.isfile(fname):
+        return "No idea"
+    with open(fname) as f:
+        records = csv.DictReader(f)
+        for row in (x for x in records if x['Player'] == player_name):
+            prices[row['WK']] = row[stat_name]
+    stat_string = f"{stat_name} by week:\n"
+    for k in prices:
+        stat_string += f'{k}: {prices[k]}\n'
+    return stat_string

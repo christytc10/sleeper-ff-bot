@@ -9,12 +9,12 @@ from notifications.bot import get_current_week
 
 def get_snap_counts_for_week(player_name, week):
     snap_counts = {}
-    fname = f"discord_bot/weekly_stats/wk{week}.csv"
+    fname = f"discord_bot/weekly_stats/weeklystats.csv"
     if not os.path.isfile(fname):
         return None
     with open(fname) as f:
         records = csv.DictReader(f)
-        for row in records:
+        for row in (x for x in records if int(x['WK']) == week):
             snap_counts[row['Player']] = row['Snap %']
 
     matches = difflib.get_close_matches(player_name, snap_counts)
