@@ -2,7 +2,6 @@ import csv
 import difflib
 from fuzzywuzzy import fuzz
 import os.path
-import re
 
 
 def parse_row(row):
@@ -23,12 +22,12 @@ def parse_row(row):
 
 def get_weekly_stats(player_name, week):
     prices = {}
-    fname = f"discord_bot/weekly_stats/wk{week}.csv"
+    fname = f"discord_bot/weekly_stats/weeklystats.csv"
     if not os.path.isfile(fname):
         return "No idea"
     with open(fname) as f:
         records = csv.DictReader(f)
-        for row in records:
+        for row in (x for x in records if int(x['WK']) == week):
             prices[row['Player']] = parse_row(row)
     matches = difflib.get_close_matches(player_name, prices)
     if len(matches) == 0:
