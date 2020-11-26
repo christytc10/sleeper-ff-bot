@@ -230,12 +230,6 @@ def run_notifications():
 
     league_id = os.environ["LEAGUE_ID"]
 
-    # Check if the user specified the close game num. Default is 20.
-    try:
-        close_num = os.environ["CLOSE_NUM"]
-    except:
-        close_num = 20
-
     starting_date = pendulum.datetime(STARTING_YEAR, STARTING_MONTH, STARTING_DAY)
 
     webhook = os.environ["WEBHOOK"]
@@ -251,6 +245,11 @@ def run_notifications():
     stonks_bot = Discord(webhook, "Stonks", "https://m.media-amazon.com/images/I/81l-+mFDVzL._SS500_.jpg")
     awards_bot = Discord(webhook, "Draft Awards",
                          "https://image.shutterstock.com/image-vector/trophy-victory-reward-success-icon-260nw-1176405127.jpg")
+
+    #TODO - Dynasty bot reports: injuries and stonks?
+    # TODO? - Value tracking?
+    # TODO - document stat tracking
+    # TODO -week scorer using weekly stats
 
     # scheduled injury reports
     schedule.every().sunday.at("13:00").do(doctor_bot.send, get_injury_report, league_id)

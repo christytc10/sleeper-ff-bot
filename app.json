@@ -22,10 +22,6 @@
       "description": "The Sleeper league id.",
       "value": "1"
     },
-    "CLOSE_NUM": {
-      "description": "How close a game score needs to be to be considered close.",
-      "value": "20"
-    },
     "NUMBER_OF_PLAYOFF_TEAMS": {
       "description": "The number of playoff teams in the league."
     },
