@@ -22,7 +22,7 @@ def parse_row(row):
 
 def load_weekly_stats(player_name, week):
     stats = {}
-    fname = f"weekly_stats/weeklystats.csv"
+    fname = f"discord_bot/weekly_stats/weeklystats.csv"
     if not os.path.isfile(fname):
         return "No idea"
     with open(fname) as f:
@@ -72,6 +72,7 @@ def get_fantasy_score(player_name, week):
     print(f"{player_name} in week {week}")
     stats = load_weekly_stats(player_name, int(week))
     if stats is not None:
+        # standard scoring. Add the half-ppr (ignore the points per int/TD discrepancy)
         fantasy_points = float(stats['Fantasy Points'])
         fantasy_points += points_for_stat(stats, 'REC', 0.5)
         return fantasy_points
