@@ -20,24 +20,30 @@ def parse_row(row):
     return row_string
 
 
-def get_weekly_stats(player_name, week):
-    prices = {}
-    fname = f"discord_bot/weekly_stats/weeklystats.csv"
+def load_weekly_stats(player_name, week):
+    stats = {}
+    fname = f"weekly_stats/weeklystats.csv"
     if not os.path.isfile(fname):
         return "No idea"
     with open(fname) as f:
         records = csv.DictReader(f)
-        for row in (x for x in records if x['WK'] == week):
-            prices[row['Player']] = parse_row(row)
-    matches = difflib.get_close_matches(player_name, prices)
+        for row in (x for x in records if int(x['WK']) == week):
+            stats[row['Player']] = row
+    matches = difflib.get_close_matches(player_name, stats)
     if len(matches) == 0:
         print(f'Could not determine stats for {player_name} in week {week}')
         return "No idea"
     ratio = fuzz.ratio(matches[0].lower(), player_name.lower())
     if ratio > 80:
-        return prices.get(matches[0])
+        return stats.get(matches[0])
+    return None
+
+
+def get_weekly_stats(player_name, week):
+    player_stats = load_weekly_stats(player_name, int(week))
+    if player_stats is not None:
+        return parse_row(player_stats)
     else:
-        print(f'Closest match for {player_name} is {matches[0]}(ratio:{ratio}). Not close enough')
         return "No idea"
 
 
@@ -54,3 +60,19 @@ def get_player_stat(player_name, stat_name):
     for k in prices:
         stat_string += f'{k}: {prices[k]}\n'
     return stat_string
+
+
+def points_for_stat(stats_obj, stat_name, multiplier):
+    if stat_name not in stats_obj:
+        return 0.0
+    return float(stats_obj[stat_name]) * multiplier
+
+
+def get_fantasy_score(player_name, week):
+    print(f"{player_name} in week {week}")
+    stats = load_weekly_stats(player_name, int(week))
+    if stats is not None:
+        fantasy_points = float(stats['Fantasy Points'])
+        fantasy_points += points_for_stat(stats, 'REC', 0.5)
+        return fantasy_points
+    return "No idea"
