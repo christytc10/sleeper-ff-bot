@@ -143,84 +143,6 @@ def send_any_string(string_to_send):
     return string_to_send
 
 
-def get_matchups_string(league_id):
-    """
-    Creates and returns a message of the current week's matchups.
-    :param league_id: Int league_id
-    :return: string message of the current week mathchups.
-    """
-    week = get_current_week()
-    scoreboards = get_league_scoreboards(league_id, week)
-    final_message_string = "________________________________\n"
-    final_message_string += "Matchups for Week {}:\n".format(week)
-    final_message_string += "________________________________\n\n"
-
-    for i, matchup_id in enumerate(scoreboards):
-        matchup = scoreboards[matchup_id]
-        matchup_string = "Matchup {}:\n".format(i + 1)
-        matchup_string += "{} VS. {} \n\n".format(matchup[0][0], matchup[1][0])
-        final_message_string += matchup_string
-
-    return final_message_string
-
-
-def get_scores_string(league_id):
-    """
-    Creates and returns a message of the league's current scores for the current week.
-    :param league_id: Int league_id
-    :return: string message of the current week's scores
-    """
-    week = get_current_week()
-    scoreboards = get_league_scoreboards(league_id, week)
-    final_message_string = "Scores \n____________________\n\n"
-    for i, matchup_id in enumerate(scoreboards):
-        matchup = scoreboards[matchup_id]
-        print(matchup)
-        first_score = 0
-        second_score = 0
-        if matchup[0][1] is not None:
-            first_score = matchup[0][1]
-        if matchup[1][1] is not None:
-            second_score = matchup[1][1]
-        string_to_add = "Matchup {}\n{:<8} {:<8.2f}\n{:<8} {:<8.2f}\n\n".format(i + 1, matchup[0][0], first_score,
-                                                                                matchup[1][0], second_score)
-        final_message_string += string_to_add
-
-    return final_message_string
-
-
-def get_standings_string(league_id):
-    """
-    Creates and returns a message of the league's standings.
-    :param league_id: Int league_id
-    :return: string message of the leagues standings.
-    """
-    league = League(league_id)
-    rosters = league.get_rosters()
-    users = league.get_users()
-    standings = league.get_standings(rosters, users)
-    final_message_string = "________________________________\n"
-    final_message_string += "Standings \n|{0:^7}|{1:^7}|{2:^7}|{3:^7}\n".format("rank", "team", "wins", "points")
-    final_message_string += "________________________________\n\n"
-    try:
-        playoff_line = os.environ["NUMBER_OF_PLAYOFF_TEAMS"] - 1
-    except:
-        playoff_line = 5
-    for i, standing in enumerate(standings):
-        team = standing[0]
-        if team is None:
-            team = "Team NA"
-        if len(team) >= 7:
-            team_name = team[:7]
-        else:
-            team_name = team
-        string_to_add = "{0:^7} {1:^10} {2:>7} {3:>7}\n".format(i + 1, team_name, standing[1], standing[3])
-        if i == playoff_line:
-            string_to_add += "________________________________\n\n"
-        final_message_string += string_to_add
-    return final_message_string
-
-
 def run_notifications():
     """
     Main script for the bot
@@ -246,7 +168,7 @@ def run_notifications():
     awards_bot = Discord(webhook, "Draft Awards",
                          "https://image.shutterstock.com/image-vector/trophy-victory-reward-success-icon-260nw-1176405127.jpg")
 
-    #TODO - Dynasty bot reports: injuries and stonks?
+    # TODO - Dynasty bot reports: injuries and stonks?
     # TODO? - Value tracking?
     # TODO - document stat tracking
     # TODO -week scorer using weekly stats
@@ -266,16 +188,6 @@ def run_notifications():
     spam_bot.send(get_trending_players)
     spam_bot.send(get_injury_report, league_id)
     spam_bot.send(get_trade_leaders, league_id, get_current_week())
-
-    spam_bot.send(get_matchups_string, league_id)
-    spam_bot.send(get_scores_string, league_id)
-
-    # schedule.every().thursday.at("19:00").do(bot.send, get_matchups_string, league_id)  # Matchups Thursday at 4:00 pm ET
-    # schedule.every().friday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Friday at 12 pm ET
-    # schedule.every().sunday.at("22:00").do(bot.send, get_close_games_string, league_id, int(close_num))  # Close games Sunday on 7:00 pm ET
-    # schedule.every().monday.at("12:00").do(bot.send, get_scores_string, league_id)  # Scores Monday at 12 pm ET
-    # schedule.every().tuesday.at("15:00").do(bot.send, get_standings_string, league_id)  # Standings Tuesday at 11:00 am ET
-    # schedule.every().tuesday.at("15:01").do(bot.send, get_best_and_worst_string, league_id)  # Standings Tuesday at 11:01 am ET
 
     while True:
         if starting_date <= pendulum.today():
