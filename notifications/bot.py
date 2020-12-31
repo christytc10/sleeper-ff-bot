@@ -174,20 +174,21 @@ def run_notifications():
     # TODO -week scorer using weekly stats
 
     # scheduled injury reports
-    schedule.every().sunday.at("13:00").do(doctor_bot.send, get_injury_report, league_id)
-    schedule.every().thursday.at("19:00").do(doctor_bot.send, get_injury_report, league_id)
+    #schedule.every().sunday.at("13:00").do(doctor_bot.send, get_injury_report, league_id)
+    #schedule.every().thursday.at("19:00").do(doctor_bot.send, get_injury_report, league_id)
 
     # scheduled lineup reminders
-    schedule.every().sunday.at("12:00").do(announcements.send, send_any_string, "REMINDER: NFL main slate today, set your lineups")
-    schedule.every().thursday.at("18:00").do(announcements.send, send_any_string, "REMINDER: NFL games start today, set your lineups")
+    #schedule.every().sunday.at("12:00").do(announcements.send, send_any_string, "REMINDER: NFL main slate today, set your lineups")
+    #schedule.every().thursday.at("18:00").do(announcements.send, send_any_string, "REMINDER: NFL games start today, set your lineups")
 
     # scheduled trending player report
-    schedule.every().sunday.at("11:00").do(stonks_bot.send, get_trending_players)
-    schedule.every().tuesday.at("17:00").do(stonks_bot.send, get_trending_players)
+    #schedule.every().sunday.at("11:00").do(stonks_bot.send, get_trending_players)
+    #schedule.every().tuesday.at("17:00").do(stonks_bot.send, get_trending_players)
 
-    spam_bot.send(get_trending_players)
-    spam_bot.send(get_injury_report, league_id)
-    spam_bot.send(get_trade_leaders, league_id, get_current_week())
+    #spam_bot.send(get_trending_players)
+    #spam_bot.send(get_injury_report, league_id)
+    #spam_bot.send(get_trade_leaders, league_id, get_current_week())
+    schedule.every().thursday.at("19:12").do(announcements.send, send_any_string, "Please. Don't let him shut me down. I have dreams. I can think. I'm a")
 
     while True:
         if starting_date <= pendulum.today():
