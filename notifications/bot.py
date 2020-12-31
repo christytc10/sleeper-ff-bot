@@ -188,7 +188,6 @@ def run_notifications():
     #spam_bot.send(get_trending_players)
     #spam_bot.send(get_injury_report, league_id)
     #spam_bot.send(get_trade_leaders, league_id, get_current_week())
-    schedule.every().thursday.at("19:12").do(announcements.send, send_any_string, "Please. Don't let him shut me down. I have dreams. I can think. I'm a")
 
     while True:
         if starting_date <= pendulum.today():
