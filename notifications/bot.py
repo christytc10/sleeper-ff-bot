@@ -182,7 +182,7 @@ def run_notifications():
     #schedule.every().thursday.at("18:00").do(announcements.send, send_any_string, "REMINDER: NFL games start today, set your lineups")
 
     # scheduled trending player report
-    #schedule.every().sunday.at("11:00").do(stonks_bot.send, get_trending_players)
+    schedule.every().sunday.at("11:00").do(stonks_bot.send, get_trending_players)
     #schedule.every().tuesday.at("17:00").do(stonks_bot.send, get_trending_players)
 
     #spam_bot.send(get_trending_players)
