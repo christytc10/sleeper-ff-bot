@@ -12,7 +12,7 @@ import os
 
 TOKEN = os.environ["CHAT_BOT_TOKEN"]
 bot = commands.Bot(command_prefix='!')
-bot.add_cog(TradeCommands)
+bot.add_cog(TradeCommands(bot))
 
 @bot.command()
 async def ping(ctx):
