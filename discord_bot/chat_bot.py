@@ -27,7 +27,9 @@ async def combine(ctx, player_name):
     await ctx.send(get_combine_results(player_name))
 
 
-@bot.command()
+@bot.command(
+    help="Checks sleeper starting lineups for injured players. Does not factor in bye weeks yet",
+    brief="Checks starting lineups are eligible.")
 async def cardcheck(ctx):
     await ctx.send(get_injured_starters())
 
@@ -58,7 +60,7 @@ async def similar(ctx, player_name):
 
 
 @bot.command()
-async def week(ctx, nfl_week, player_name):
+async def week(ctx, nfl_season, nfl_week, player_name):
     await ctx.send(get_weekly_stats(player_name, nfl_week))
 
 
