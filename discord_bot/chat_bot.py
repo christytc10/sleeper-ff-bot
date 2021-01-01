@@ -1,5 +1,6 @@
 # Work with Python 3.6
 from discord.ext import commands
+from discord_bot.command_groups.trade_commands import TradeCommands
 from discord_bot.player_value import find_value, similar_value
 from discord_bot.combine import get_combine_results
 from discord_bot.snaps import get_snap_counts
@@ -8,18 +9,14 @@ from discord_bot.card_check import get_injured_starters
 from discord_bot.roster_analysis import get_roster_ages, get_roster_value
 import os
 
+
 TOKEN = os.environ["CHAT_BOT_TOKEN"]
 bot = commands.Bot(command_prefix='!')
-
+bot.add_cog(TradeCommands)
 
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
-
-
-@bot.command()
-async def value(ctx, player_name):
-    await ctx.send(find_value(player_name))
 
 
 @bot.command()
