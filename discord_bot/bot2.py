@@ -9,4 +9,6 @@ bot = commands.Bot(command_prefix='!')
 async def ping(ctx):
     await ctx.send('pong')
 
-bot.run(TOKEN)
+
+def start_bot():
+    bot.run(TOKEN)
