@@ -1,6 +1,5 @@
 # Work with Python 3.6
 import discord
-from discord.ext import commands
 from discord_bot.player_value import find_value, similar_value
 from discord_bot.combine import get_combine_results
 from discord_bot.snaps import get_snap_counts
@@ -12,9 +11,6 @@ import re
 
 TOKEN = os.environ["CHAT_BOT_TOKEN"]
 client = discord.Client()
-
-intents = discord.Intents.default()
-bot = commands.Bot(command_prefix='!', description='description', intents=intents)
 
 
 @client.event
@@ -73,12 +69,6 @@ async def on_message(message):
                           "!roster age - will list roster ages\n" \
                           "!roster value - will try and list roster values (no picks)\n"
         await message.channel.send(commands_string)
-
-
-@bot.command()
-async def add(ctx, left: int, right: int):
-    """Adds two numbers together."""
-    await ctx.send(left + right)
 
 
 @client.event
