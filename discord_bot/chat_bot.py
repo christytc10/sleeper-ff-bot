@@ -7,40 +7,9 @@ from discord_bot.weekly_stats import get_weekly_stats, get_player_stat
 from discord_bot.card_check import get_injured_starters
 from discord_bot.roster_analysis import get_roster_ages, get_roster_value
 import os
-import re
 
 TOKEN = os.environ["CHAT_BOT_TOKEN"]
 bot = commands.Bot(command_prefix='!')
-
-
-async def on_message(message):
-    # we do not want the bot to reply to itself
-    if message.content.startswith('!similar'):
-        name = message.content[len('!similar'):].strip()
-        await message.channel.send(similar_value(name))
-
-    if message.content.startswith('!week'):
-        week = re.findall('\d+', message.content)[0]
-        name = message.content[message.content.find(week) + len(week):].strip()
-        await message.channel.send(get_weekly_stats(name, week))
-
-    if message.content.startswith('!roster age'):
-        await message.channel.send(get_roster_ages())
-
-    if message.content.startswith('!roster value'):
-        await message.channel.send(get_roster_value())
-
-    if message.content.startswith('!help'):
-        commands_string = "Commands you can run:\n\n!hello - tests the bot is up\n" \
-                          "!value {player name} will try and value the player\n" \
-                          "!similar {player name} will find players of perceived similar value\n" \
-                          "!combine {player name} will grab available combine results for a player\n" \
-                          "!snaps {player name} will show snap counts broken down by week for a player\n" \
-                          "!week {game week} {player name} will list some metrics on a player's weekly performance\n" \
-                          "!cardcheck - will list any starters\n" \
-                          "!roster age - will list roster ages\n" \
-                          "!roster value - will try and list roster values (no picks)\n"
-        await message.channel.send(commands_string)
 
 
 @bot.command()
@@ -71,6 +40,26 @@ async def stat(ctx, name, stat_name):
 @bot.command()
 async def snaps(ctx, player_name):
     await ctx.send(get_snap_counts(player_name))
+
+
+@bot.command()
+async def roster_ages(ctx):
+    await ctx.send(get_roster_ages())
+
+
+@bot.command()
+async def roster_value(ctx):
+    await ctx.send(get_roster_value())
+
+
+@bot.command()
+async def similar(ctx, player_name):
+    await ctx.send(similar_value(player_name))
+
+
+@bot.command()
+async def week(ctx, nfl_week, player_name):
+    await ctx.send(get_weekly_stats(player_name, nfl_week))
 
 
 @bot.event
