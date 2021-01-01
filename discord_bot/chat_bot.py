@@ -1,5 +1,5 @@
 # Work with Python 3.6
-import discord
+from discord.ext import commands
 from discord_bot.player_value import find_value, similar_value
 from discord_bot.combine import get_combine_results
 from discord_bot.snaps import get_snap_counts
@@ -10,47 +10,19 @@ import os
 import re
 
 TOKEN = os.environ["CHAT_BOT_TOKEN"]
-client = discord.Client()
+bot = commands.Bot(command_prefix='!')
 
 
-@client.event
 async def on_message(message):
     # we do not want the bot to reply to itself
-    if message.author == client.user:
-        return
-
-    if message.content.startswith('!hello'):
-        msg = 'Hello {0.author.mention}'.format(message)
-        await message.channel.send(msg)
-
-    if message.content.startswith('!value'):
-        name = message.content[len('!value'):].strip()
-        await message.channel.send(find_value(name))
-
     if message.content.startswith('!similar'):
         name = message.content[len('!similar'):].strip()
         await message.channel.send(similar_value(name))
-
-    if message.content.startswith('!combine'):
-        name = message.content[len('!combine'):].strip()
-        await message.channel.send(get_combine_results(name))
-
-    if message.content.startswith('!snaps'):
-        name = message.content[len('!snaps'):].strip()
-        await message.channel.send(get_snap_counts(name))
 
     if message.content.startswith('!week'):
         week = re.findall('\d+', message.content)[0]
         name = message.content[message.content.find(week) + len(week):].strip()
         await message.channel.send(get_weekly_stats(name, week))
-
-    if message.content.startswith('!stat'):
-        name = re.findall(r'\"(.+?)\"', message.content)[0]
-        stat = re.findall(r'\"(.+?)\"', message.content)[1]
-        await message.channel.send(get_player_stat(name, stat))
-
-    if message.content.startswith('!cardcheck'):
-        await message.channel.send(get_injured_starters())
 
     if message.content.startswith('!roster age'):
         await message.channel.send(get_roster_ages())
@@ -71,13 +43,43 @@ async def on_message(message):
         await message.channel.send(commands_string)
 
 
-@client.event
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
+
+
+@bot.command()
+async def value(ctx, player_name):
+    await ctx.send(find_value(player_name))
+
+
+@bot.command()
+async def combine(ctx, player_name):
+    await ctx.send(get_combine_results(player_name))
+
+
+@bot.command()
+async def cardcheck(ctx):
+    await ctx.send(get_injured_starters())
+
+
+@bot.command()
+async def stat(ctx, name, stat_name):
+    await ctx.send(get_player_stat(name, stat_name))
+
+
+@bot.command()
+async def snaps(ctx, player_name):
+    await ctx.send(get_snap_counts(player_name))
+
+
+@bot.event
 async def on_ready():
     print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
+    print(bot.user.name)
+    print(bot.user.id)
     print('------')
 
 
 def start_bot():
-    client.run(TOKEN)
+    bot.run(TOKEN)
