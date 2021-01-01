@@ -11,4 +11,5 @@ async def ping(ctx):
 
 
 def start_bot():
+    print('STARTING BOT 2')
     bot.run(TOKEN)
