@@ -3,7 +3,7 @@ from discord_bot.nfl_api.nfl_fixtures import get_teams_playing
 from notifications.bot import get_current_week
 
 
-def get_injured_starters(league_id=522501269823889408):
+def get_injured_starters(league_id=649923060580864000):
     rostered_players = {}
     for roster in League(league_id).get_rosters():
         username = User(roster["owner_id"]).get_username()

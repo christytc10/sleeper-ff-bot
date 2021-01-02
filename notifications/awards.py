@@ -11,7 +11,7 @@ def to_cm(height_feet_inches):
     return total_inches * 2.54
 
 
-def get_big_boi(league_id=522501269823889408, season=2020, week=1):
+def get_big_boi(league_id=649923060580864000, season=2020, week=1):
     all_rostered_players = []
     for roster in League(league_id).get_rosters():
         roster_players = []
@@ -75,7 +75,7 @@ def get_big_boi(league_id=522501269823889408, season=2020, week=1):
         break
 
     added_players = []
-    fake_league = League(522501269823889408)
+    fake_league = League(649923060580864000)
     txns = fake_league.get_transactions(week=1)
     for txn in [x['adds'] for x in txns if x['type'] in ['free_agent', 'waiver'] and x['adds'] is not None]:
         for key in txn.keys():

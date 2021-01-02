@@ -2,7 +2,7 @@ from sleeper_wrapper import Players, League, User
 from discord_bot.player_value import find_value
 
 
-def get_roster_ages(league_id=522501269823889408):
+def get_roster_ages(league_id=649923060580864000):
     players = Players().get_all_players()
     rostered_ages = {}
 
@@ -24,7 +24,7 @@ def get_roster_ages(league_id=522501269823889408):
     return age_string
 
 
-def get_roster_value(league_id=522501269823889408):
+def get_roster_value(league_id=649923060580864000):
     players = Players().get_all_players()
     return_string = "Position Values (excludes dross ;) ):\n"
 

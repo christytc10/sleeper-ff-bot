@@ -1,7 +1,7 @@
 {
   "name": "sleeper-ff-bot",
-  "description": "A GroupMe/Slack/Discord Bot for Sleeper fantasy leagues",
-  "repository": "https://github.com/SwapnikKatkoori/sleeper-ff-bot",
+  "description": "A Discord Bot for Sleeper fantasy leagues",
+  "repository": "https://github.com/christytc10/sleeper-ff-bot",
   "logo": "",
   "keywords": [
     "Bot",
@@ -9,15 +9,9 @@
     "fantasy-football",
     "Python",
     "Heroku",
-    "Groupme",
-    "Slack",
     "Discord"
   ],
   "env": {
-    "BOT_TYPE": {
-      "description": "The type of Bot. Options are groupme, slack, or discord.",
-      "value": "discord"
-    },
     "LEAGUE_ID": {
       "description": "The Sleeper league id.",
       "value": "1"
