@@ -1,1 +1,0 @@
-https://apps.dynastyleaguefootball.com/tradeanalyzer/values.php?l=sf

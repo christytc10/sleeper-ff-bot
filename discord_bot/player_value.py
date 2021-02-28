@@ -1,19 +1,25 @@
-import csv
+import csv, urllib.request
 import difflib
 from fuzzywuzzy import fuzz
+from datetime import datetime, timedelta
+
 prices = {}
+values_updated = {"when": datetime.now() - timedelta(days = 365)}
 
 
 def load_prices():
-    with open("discord_bot/pricing/sf.csv") as f:
-        records = csv.DictReader(f)
+    if (prices is None or len(prices) == 0) and (abs((values_updated["when"] - datetime.now()).days) > 1):
+        url = 'https://raw.githubusercontent.com/dynastyprocess/data/master/files/values.csv'
+        response = urllib.request.urlopen(url)
+        lines = [l.decode('utf-8') for l in response.readlines()]
+        records = csv.DictReader(lines)
         for row in records:
-            prices[row['name']] = float(row['value'])
+            prices[row['player']] = float(row['value_2qb'])
+    values_updated["when"] = datetime.now()
 
 
 def find_value(player_name):
-    if prices is None or len(prices) == 0:
-        load_prices()
+    load_prices()
     matches = difflib.get_close_matches(player_name, prices)
     if len(matches) == 0:
         print('Could not determine value for ' + player_name)
@@ -27,8 +33,7 @@ def find_value(player_name):
 
 
 def similar_value(player_name):
-    if prices is None or len(prices) == 0:
-        load_prices()
+    load_prices()
     matches = difflib.get_close_matches(player_name, prices)
     if len(matches) == 0:
         print('Could not determine value for ' + player_name)
