@@ -9,11 +9,11 @@ class TradeCommands(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def value(ctx, player_name):
+    async def value(self, ctx, player_name):
         """get a player's dynasty superflex value"""
         await ctx.send(find_value(player_name))
 
     @commands.command()
-    async def similar(ctx, player_name):
+    async def similar(self, ctx, player_name):
         """find players of similar value"""
         await ctx.send(similar_value(player_name))
